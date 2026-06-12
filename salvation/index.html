@@ -385,6 +385,7 @@ id="page-salvation" class="page">
       <a href="https://wa.me/256781939598?text=I%20just%20gave%20my%20life%20to%20Christ%20through%20the%20Healing%20Moment%20Church%20website.%20I%20would%20like%20to%20connect%20with%20the%20church." target="_blank" class="btn-gold" style="display:block;text-align:center;text-decoration:none;padding:12px;border-radius:6px">💬 WhatsApp Us</a>
 
       <form name="salvation" method="POST" action="https://formspree.io/f/xlgkpowe"  style="margin-top:1rem">
+        <input type="hidden" name="_subject" value="HMC Website — Salvation Decision">
         
         
         <p style="font-size:13px;color:#b8c8e8;margin-bottom:.75rem">We would love to connect with you and help you take your next steps in faith.</p>
@@ -480,6 +481,33 @@ if(cfo)cfo.addEventListener('click',function(e){if(e.target===this)closeContactF
     if(href === path) el.classList.add('active');
   });
 })();
+</script>
+
+
+
+<script>
+document.querySelectorAll('form[action*="formspree"]').forEach(function(form){
+  form.addEventListener('submit', function(){
+    if(!form.querySelector('input[name="_local_time"]')){
+      var input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = 'Submitted at (Uganda Time)';
+      var now = new Date();
+      input.value = now.toLocaleString('en-UG', {
+        timeZone: 'Africa/Nairobi',
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+      }) + ' EAT';
+      input.setAttribute('name', '_local_time');
+      form.appendChild(input);
+    }
+  });
+});
 </script>
 </body>
 </html>
