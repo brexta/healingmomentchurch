@@ -373,6 +373,9 @@ id="page-connect" class="page">
     <!-- ONLINE CONNECT HEADER -->
     <div class="section-title">Online Connect</div>
     <div class="gold-line"></div>
+    <div style="text-align:center;margin:1rem 0">
+      <a href="#contact-form" style="display:inline-block;background:#c9a84c;color:#0f1b4c;font-weight:700;font-size:14px;padding:12px 28px;border-radius:30px;text-decoration:none">📨 Send Us a Message</a>
+    </div>
     <p style="font-size:13px;color:var(--text-muted);margin-bottom:1.25rem;line-height:1.7">Connect with us on our social media platforms and stay updated with sermons, devotions, testimonies, and upcoming events. All accounts are under <strong>Healing Moment Ministry</strong>.</p>
 
     <!-- SOCIAL CARDS - FULL DETAIL -->
@@ -441,6 +444,7 @@ id="page-connect" class="page">
     <div style="margin-top:1.25rem">
       <div style="font-size:10px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:.75rem">Send Us a Message</div>
       <form name="connect-enquiry" method="POST" action="https://formspree.io/f/xlgkpowe" >
+        <input type="hidden" name="_subject" value="HMC Website — General Enquiry">
         
         
         <input type="text" name="name" placeholder="Your full name" required
@@ -541,6 +545,33 @@ if(cfo)cfo.addEventListener('click',function(e){if(e.target===this)closeContactF
     if(href === path) el.classList.add('active');
   });
 })();
+</script>
+
+
+
+<script>
+document.querySelectorAll('form[action*="formspree"]').forEach(function(form){
+  form.addEventListener('submit', function(){
+    if(!form.querySelector('input[name="_local_time"]')){
+      var input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = 'Submitted at (Uganda Time)';
+      var now = new Date();
+      input.value = now.toLocaleString('en-UG', {
+        timeZone: 'Africa/Nairobi',
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+      }) + ' EAT';
+      input.setAttribute('name', '_local_time');
+      form.appendChild(input);
+    }
+  });
+});
 </script>
 </body>
 </html>
