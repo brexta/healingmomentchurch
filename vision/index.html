@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Learn about The Healing Moment Church vision, leadership and mission in Kampala, Uganda.">
   <title>Our Vision — The Healing Moment Church</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  
   <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--navy:#0f1b4c;--gold:#c9a84c;--light-gold:#f0d080;--cream:#faf8f2;--mid:#1a2d6b;--text-dark:#1a1a2e;--text-muted:#6b7280}
@@ -318,6 +321,25 @@ body{font-family:'Lato',sans-serif;background:#0a1535;color:var(--text-dark)}
 .bnav-icon{font-size:18px;line-height:1}
 .bnav-label{font-size:9px;font-weight:600;letter-spacing:.3px;white-space:nowrap}
 
+
+  /* ── Poppins + Roboto typography ── */
+  body { font-family: 'Roboto', sans-serif; font-weight: 400; }
+  h1,h2,h3,h4,h5,.section-title,.nav-title,.dev-topic,
+  .leader-name,.book-title,.event-title {
+    font-family: 'Poppins', sans-serif; font-weight: 700;
+  }
+  .hero-title, .hero-tagline {
+    font-family: 'Poppins', sans-serif; font-weight: 800;
+  }
+  .dev-verse, .arc-verse-text, blockquote, .dev-insight-text,
+  .arc-insight-text, .arc-prayer p, .dev-prayer p {
+    font-family: 'Roboto', sans-serif; font-style: italic;
+  }
+  .dev-date, .muted, .arc-meta, .event-tag, .book-price,
+  .contact-label { font-family: 'Roboto', sans-serif; font-weight: 300; }
+  .nav-link, .bnav-label, .btn-gold, .btn-outline {
+    font-family: 'Poppins', sans-serif; font-weight: 600;
+  }
 </style>
   
 <style>
@@ -349,22 +371,22 @@ body{padding-bottom:70px}
 </style>
 </head>
 <body>
-  <nav class="desktop-nav">
-    <div class="nav-inner">
-      <div class="nav-brand">
-        <span class="nav-title">The Healing Moment Church</span>
-      </div>
-      <div class="nav-links">
-        <a href="/" class="nav-link">Home</a>
-        <a href="/sermons" class="nav-link">Sermons</a>
-        <a href="/devotion" class="nav-link">Devotion</a>
-        <a href="/events" class="nav-link">Events</a>
-        <a href="/books" class="nav-link">Books</a>
-        <a href="/connect" class="nav-link">Connect</a>
-        <a href="/give" class="nav-link" style="color:var(--gold);font-weight:700;border:1px solid var(--gold);padding:4px 12px;border-radius:20px">Give</a>
-      </div>
+  <nav class="desktop-nav" style="position:sticky;top:0;z-index:300;background:var(--navy);border-bottom:1px solid rgba(201,168,76,.25);padding:0 1.5rem">
+  <div style="display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;height:58px">
+    <span style="font-family:'Poppins',sans-serif;font-weight:800;color:var(--gold);font-size:1rem;white-space:nowrap">The Healing Moment Church</span>
+    <div style="display:flex;align-items:center;gap:1.8rem">
+      <a href="/" style="color:#b8c8e8;text-decoration:none;font-size:13px;font-family:'Poppins',sans-serif;font-weight:600">Home</a>
+      <a href="/sermons" style="color:#b8c8e8;text-decoration:none;font-size:13px;font-family:'Poppins',sans-serif;font-weight:600">Sermons</a>
+      <a href="/devotion" style="color:#b8c8e8;text-decoration:none;font-size:13px;font-family:'Poppins',sans-serif;font-weight:600">Devotion</a>
+      <a href="/archive" style="color:#b8c8e8;text-decoration:none;font-size:13px;font-family:'Poppins',sans-serif;font-weight:600">Archive</a>
+      <a href="/events" style="color:#b8c8e8;text-decoration:none;font-size:13px;font-family:'Poppins',sans-serif;font-weight:600">Events</a>
+      <a href="/books" style="color:#b8c8e8;text-decoration:none;font-size:13px;font-family:'Poppins',sans-serif;font-weight:600">Books</a>
+      <a href="/connect" style="color:#b8c8e8;text-decoration:none;font-size:13px;font-family:'Poppins',sans-serif;font-weight:600">Connect</a>
+      <a href="/give" style="color:var(--gold);font-weight:700;text-decoration:none;font-size:13px;border:1px solid var(--gold);padding:4px 14px;border-radius:20px;font-family:'Poppins',sans-serif">Give</a>
     </div>
-  </nav>
+  </div>
+</nav>
+
 
 <div id="page-vision" class="page active">
 id="page-model" class="page">
@@ -544,22 +566,25 @@ id="page-model" class="page">
 
 </div>
   <nav id="bottom-nav" class="bottom-nav">
-    <a href="/" class="bnav-btn" id="bnav-home"><span class="bnav-icon">🏠</span><span class="bnav-label">Home</span></a>
-    <a href="/sermons" class="bnav-btn" id="bnav-sermons"><span class="bnav-icon">🎧</span><span class="bnav-label">Sermons</span></a>
-    <a href="/devotion" class="bnav-btn" id="bnav-devotion"><span class="bnav-icon">📖</span><span class="bnav-label">Devotion</span></a>
-    <a href="/events" class="bnav-btn" id="bnav-events"><span class="bnav-icon">📅</span><span class="bnav-label">Events</span></a>
-    <a href="/testimonies" class="bnav-btn" id="bnav-testimonies"><span class="bnav-icon">✨</span><span class="bnav-label">Stories</span></a>
-    <a href="/give" class="bnav-btn" id="bnav-give"><span class="bnav-icon">💛</span><span class="bnav-label">Give</span></a>
-    <a href="/connect" class="bnav-btn" id="bnav-connect"><span class="bnav-icon">💬</span><span class="bnav-label">Connect</span></a>
-    <button class="bnav-btn" onclick="toggleMoreMenu()" id="bnav-more"><span class="bnav-icon">☰</span><span class="bnav-label">More</span></button>
-  </nav>
-  <div id="more-menu" style="display:none;position:fixed;bottom:60px;right:0;left:0;background:#0a1535;z-index:400;border-top:1px solid rgba(201,168,76,.3);padding:.75rem 1rem">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:400px;margin:0 auto">
-      <a href="/vision" style="background:rgba(255,255,255,.06);border-radius:8px;padding:10px;text-decoration:none;color:#fff;font-size:13px;text-align:center;display:block">👁 Our Vision</a>
-      <a href="/books" style="background:rgba(255,255,255,.06);border-radius:8px;padding:10px;text-decoration:none;color:#fff;font-size:13px;text-align:center;display:block">📚 Books</a>
-      <a href="/community" style="background:rgba(255,255,255,.06);border-radius:8px;padding:10px;text-decoration:none;color:#fff;font-size:13px;text-align:center;display:block">🤝 Community</a>
-      <a href="/salvation" style="background:rgba(255,255,255,.06);border-radius:8px;padding:10px;text-decoration:none;color:#fff;font-size:13px;text-align:center;display:block">🙏 Salvation</a>
-    </div>
+  <a href="/" class="bnav-btn"><span class="bnav-icon">🏠</span><span class="bnav-label">Home</span></a>
+  <a href="/sermons" class="bnav-btn"><span class="bnav-icon">🎧</span><span class="bnav-label">Sermons</span></a>
+  <a href="/devotion" class="bnav-btn"><span class="bnav-icon">📖</span><span class="bnav-label">Devotion</span></a>
+  <a href="/events" class="bnav-btn"><span class="bnav-icon">📅</span><span class="bnav-label">Events</span></a>
+  <a href="/testimonies" class="bnav-btn"><span class="bnav-icon">✨</span><span class="bnav-label">Stories</span></a>
+  <a href="/give" class="bnav-btn"><span class="bnav-icon">💛</span><span class="bnav-label">Give</span></a>
+  <a href="/connect" class="bnav-btn"><span class="bnav-icon">💬</span><span class="bnav-label">Connect</span></a>
+  <button class="bnav-btn" onclick="toggleMore()" id="bnav-more"><span class="bnav-icon">☰</span><span class="bnav-label">More</span></button>
+</nav>
+<div id="more-menu" style="display:none;position:fixed;bottom:60px;right:0;left:0;background:#0a1535;z-index:400;border-top:1px solid rgba(201,168,76,.3);padding:.75rem 1rem">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:400px;margin:0 auto">
+    <a href="/vision" style="background:rgba(255,255,255,.06);border-radius:8px;padding:10px;text-decoration:none;color:#fff;font-size:13px;text-align:center;display:block;font-family:'Poppins',sans-serif;font-weight:600">👁 Our Vision</a>
+    <a href="/books" style="background:rgba(255,255,255,.06);border-radius:8px;padding:10px;text-decoration:none;color:#fff;font-size:13px;text-align:center;display:block;font-family:'Poppins',sans-serif;font-weight:600">📚 Books</a>
+    <a href="/community" style="background:rgba(255,255,255,.06);border-radius:8px;padding:10px;text-decoration:none;color:#fff;font-size:13px;text-align:center;display:block;font-family:'Poppins',sans-serif;font-weight:600">🤝 Community</a>
+    <a href="/salvation" style="background:rgba(255,255,255,.06);border-radius:8px;padding:10px;text-decoration:none;color:#fff;font-size:13px;text-align:center;display:block;font-family:'Poppins',sans-serif;font-weight:600">🙏 Salvation</a>
+    <a href="/archive" style="background:rgba(201,168,76,.12);border-radius:8px;padding:10px;text-decoration:none;color:#c9a84c;font-size:13px;text-align:center;display:block;border:1px solid rgba(201,168,76,.3);grid-column:span 2;font-family:'Poppins',sans-serif;font-weight:600">📖 Devotion Archive</a>
+  </div>
+</div>
+
   </div>
 
 <!-- CONTACT FORM MODAL -->
@@ -586,42 +611,31 @@ id="page-model" class="page">
 </div>
 
 <script>
-function toggleMoreMenu(){
+function toggleMore(){
   var m=document.getElementById('more-menu');
   m.style.display=m.style.display==='none'?'block':'none';
 }
 document.addEventListener('click',function(e){
   var m=document.getElementById('more-menu');
-  var btn=document.getElementById('bnav-more');
-  if(m&&m.style.display==='block'&&!m.contains(e.target)&&btn&&!btn.contains(e.target))m.style.display='none';
+  var b=document.getElementById('bnav-more');
+  if(m&&m.style.display==='block'&&!m.contains(e.target)&&b&&!b.contains(e.target))
+    m.style.display='none';
 });
-function openContactForm(subject){
-  document.getElementById('contact-form-overlay').style.display='flex';
-  var s=subject?decodeURIComponent(subject):'General Enquiry';
-  document.getElementById('cf-subject').value=s;
-  document.getElementById('cf-title').textContent=s.toLowerCase().indexOf('book')>=0?'Order a Book':s.toLowerCase().indexOf('testimony')>=0?'Share Your Testimony':'Contact Us';
-  ['cf-name','cf-contact','cf-message'].forEach(function(id){document.getElementById(id).value='';});
-  document.getElementById('cf-success').style.display='none';
-}
-function closeContactForm(){document.getElementById('contact-form-overlay').style.display='none';}
-function submitContactForm(){
-  var name=document.getElementById('cf-name').value.trim();
-  var msg=document.getElementById('cf-message').value.trim();
-  if(!name||!msg){alert('Please fill in your name and message.');return;}
-  var full='Name: '+name+'\nPhone/Email: '+document.getElementById('cf-contact').value+'\nSubject: '+document.getElementById('cf-subject').value+'\nMessage: '+msg;
-  document.getElementById('cf-success').style.display='block';
-  setTimeout(function(){window.open('https://wa.me/256781939598?text='+encodeURIComponent(full),'_blank');setTimeout(closeContactForm,2000);},800);
-}
-var cfo=document.getElementById('contact-form-overlay');
-if(cfo)cfo.addEventListener('click',function(e){if(e.target===this)closeContactForm();});
-// Highlight active nav
 (function(){
-  var path = window.location.pathname.replace(/\/+$/,'') || '/';
-  document.querySelectorAll('.bnav-btn[href], .nav-link[href]').forEach(function(el){
-    var href = (el.getAttribute('href') || '').replace(/\/+$/,'') || '/';
-    if(href === path) el.classList.add('active');
+  var p=window.location.pathname.replace(/\/+$/,'')||'/';
+  document.querySelectorAll('.bnav-btn[href]').forEach(function(el){
+    var h=(el.getAttribute('href')||'').replace(/\/+$/,'')||'/';
+    if(h===p)el.classList.add('active');
   });
 })();
+function openContactForm(s){
+  var o=document.getElementById('contact-form-overlay');
+  if(o)o.style.display='flex';
+}
+function closeContactForm(){
+  var o=document.getElementById('contact-form-overlay');
+  if(o)o.style.display='none';
+}
 </script>
 </body>
 </html>
