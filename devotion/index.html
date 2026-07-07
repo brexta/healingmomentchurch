@@ -1,87 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Daily devotion from The Healing Moment Church — The Challenge of Faith; The Ten Spies. Numbers 13:30-33 (KJV).">
-  <title>Daily Devotion — The Healing Moment Church</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{
-      --navy:#0f1b4c;--blue:#1a3a8a;--gold:#c9a84c;--cyan:#00e5ff;
-      --white:#ffffff;--muted:#b8c8e8;--text:#d4e0f0;--border:rgba(201,168,76,.22);
-    }
-    body{
-      font-family:'Roboto',sans-serif;font-weight:400;
-      background:var(--navy);color:var(--text);
-      min-height:100vh;padding-bottom:72px;
-    }
-    @media(min-width:769px){.desktop-nav{display:block!important}}
-    .bottom-nav{
-      position:fixed;bottom:0;left:0;right:0;
-      background:rgba(10,18,50,.97);
-      border-top:1px solid var(--border);
-      display:flex;align-items:stretch;justify-content:space-around;
-      height:60px;z-index:500;
-    }
-    .bnav-btn{
-      background:none;border:none;color:var(--muted);
-      cursor:pointer;display:flex;flex-direction:column;
-      align-items:center;justify-content:center;
-      gap:2px;padding:4px 6px;flex:1;
-      font-family:'Roboto',sans-serif;text-decoration:none;transition:color .15s;
-    }
-    .bnav-btn:hover,.bnav-btn.active{color:var(--gold)}
-    .bnav-icon{font-size:17px;line-height:1}
-    .bnav-label{font-size:9px;font-weight:500;letter-spacing:.3px;white-space:nowrap}
-    .section{padding:1.25rem 1rem 2rem;max-width:680px;margin:0 auto}
-    .dev-date{font-family:'Roboto',sans-serif;font-weight:300;font-size:.75rem;color:var(--muted);margin-bottom:.5rem}
-    .dev-topic{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.55rem;color:var(--white);line-height:1.2;margin-bottom:1rem}
-    .dev-verse-wrap{background:rgba(201,168,76,.08);border-radius:10px;padding:1rem;margin-bottom:1rem;border-left:3px solid var(--gold)}
-    .dev-verse{font-family:'Roboto',sans-serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.8;margin-bottom:.4rem}
-    .dev-ref{font-family:'Poppins',sans-serif;font-weight:700;font-size:.7rem;color:var(--gold);letter-spacing:1px;text-transform:uppercase}
-    .dev-body{font-family:'Roboto',sans-serif;font-size:.93rem;color:var(--text);line-height:1.85;margin-bottom:1.25rem}
-    .dev-insight{background:rgba(201,168,76,.09);border-radius:10px;padding:1rem;margin-bottom:1rem;border:1px solid rgba(201,168,76,.25)}
-    .dev-insight-label{font-family:'Poppins',sans-serif;font-weight:700;font-size:.65rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:.5rem}
-    .dev-insight-text{font-family:'Roboto',sans-serif;font-style:italic;font-size:.92rem;color:var(--white);line-height:1.7}
-    .dev-plan-wrap{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;background:rgba(255,255,255,.04);border-radius:8px;padding:.85rem;margin-bottom:1rem;font-size:.85rem;color:var(--muted)}
-    .dev-plan-label{font-family:'Poppins',sans-serif;font-weight:600;font-size:.65rem;color:var(--cyan);letter-spacing:1.5px;text-transform:uppercase;display:block;margin-bottom:.3rem}
-    .dev-prayer{background:rgba(0,229,255,.06);border-radius:10px;padding:1rem;border-left:3px solid var(--cyan);margin-bottom:1.25rem}
-    .dev-prayer-label{font-family:'Poppins',sans-serif;font-weight:700;font-size:.65rem;color:var(--cyan);letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:.5rem}
-    .dev-prayer p{font-family:'Roboto',sans-serif;font-style:italic;font-size:.92rem;color:var(--text);line-height:1.75}
-    .dev-archive-link{text-align:center;padding-top:1rem;border-top:1px solid var(--border)}
-    .dev-archive-link p{font-family:'Roboto',sans-serif;font-size:.75rem;color:var(--muted);margin-bottom:.6rem}
-    .dev-archive-link a{display:inline-block;background:rgba(201,168,76,.12);color:var(--gold);font-family:'Poppins',sans-serif;font-weight:600;font-size:.85rem;padding:10px 24px;border-radius:24px;text-decoration:none;border:1px solid rgba(201,168,76,.35)}
-    .gold-line{height:3px;width:50px;background:linear-gradient(90deg,var(--gold),transparent);border-radius:2px;margin-bottom:1.25rem}
-  </style>
-</head>
-<body>
-<nav style="position:sticky;top:0;z-index:300;background:#0f1b4c;border-bottom:1px solid rgba(201,168,76,.25);padding:0 1.5rem;display:none" class="desktop-nav">
-  <div style="display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;height:58px">
-    <span style="font-family:'Poppins',sans-serif;font-weight:800;color:#c9a84c;font-size:1rem;white-space:nowrap">The Healing Moment Church</span>
-    <div style="display:flex;align-items:center;gap:1.8rem">
-      <a href="/" style="color:#b8c8e8;text-decoration:none;font-size:13px;font-family:'Poppins',sans-serif;font-weight:600">Home</a>
-      <a href="/sermons" style="color:#b8c8e8;text-decoration:none;font-size:13px;font-family:'Poppins',sans-serif;font-weight:600">Sermons</a>
-      <a href="/devotion" style="color:#c9a84c;text-decoration:none;font-size:13px;font-family:'Poppins',sans-serif;font-weight:700">Devotion</a>
-      <a href="/archive" style="color:#b8c8e8;text-decoration:none;font-size:13px;font-family:'Poppins',sans-serif;font-weight:600">Archive</a>
-      <a href="/events" style="color:#b8c8e8;text-decoration:none;font-size:13px;font-family:'Poppins',sans-serif;font-weight:600">Events</a>
-      <a href="/books" style="color:#b8c8e8;text-decoration:none;font-size:13px;font-family:'Poppins',sans-serif;font-weight:600">Books</a>
-      <a href="/connect" style="color:#b8c8e8;text-decoration:none;font-size:13px;font-family:'Poppins',sans-serif;font-weight:600">Connect</a>
-      <a href="/give" style="color:#c9a84c;font-weight:700;text-decoration:none;font-size:13px;border:1px solid #c9a84c;padding:4px 14px;border-radius:20px;font-family:'Poppins',sans-serif">Give</a>
-    </div>
+<hAs a leader, silent years don’t mean that God has forgotten you; He is simply working on you to perfect all that concerns you. He is with you and building you into the leader He ordained you to be.</div>
   </div>
 </nav>
 <div class="section">
-  <div class="dev-date">Monday, July 6th, 2026</div>
-  <div class="dev-topic">The Challenge of Faith; The Ten Spies</div>
+  <div class="dev-date">Tuesday, July 7th, 2026 · Apostle Julius P. Isabirye</div>
+  <div class="dev-topic">Leadership Series: In the Silent Years</div>
   <div class="dev-verse-wrap">
-    <div class="dev-verse">“And Caleb stilled the people before Moses, and said, Let us go up at once, and possess it; for we are well able to overcome it. But the men that went up with him said, We be not able to go up against the people; for they are stronger than we. And they brought up an evil report of the land which they had searched unto the children of Israel, saying, The land, through which we have gone to search it, is a land that eateth up the inhabitants thereof; and all the people that we saw in it are men of a great stature. And there we saw the giants, the sons of Anak, which come of the giants: and we were in our own sight as grasshoppers, and so we were in their sight.”</div>
-    <div class="dev-ref">Numbers 13:30-33 (KJV)</div>
+    <div class="dev-verse">“And the little boy grew and became strong in spirit; and he was in the deserts (wilderness) until the day of his appearing to Israel [the commencement of his public ministry].”</div>
+    <div class="dev-ref">Luke 1:80 (AMP)</div>
   </div>
-  <div class="dev-body">When God makes a promise to you, the next phase is for you to believe that promise. Believing what God says to you, is the key to possessing what He promises. Your faith is what unlocks the potentials and possibilities in God’s promises to you.<br><br>In our opening scripture, we see that though God had made a promise to give Israel the promised land, they did not believe it. The doubt was mainly caused by the evil report of unbelief brought back by the ten spies.<br><br>Unbelief and doubt disconnect you from what God has for you. They are Satan’s tools for hindering you from walking in the promises of God.<br><br>When God tells you that the land is yours and you say “I can’t possess it”, you make His word of promise ineffective in your life. Faith is the key to cooperating and working with God. When you believe, you are saying to God, “I choose to agree with you”.<br><br>Doubt is disagreeing with God and His word. It is thinking, speaking and acting contrary to what He desires for you. The challenge of faith is to take God at His word inspite of the obstacles you see. If God says you are taking the land, don’t consider the giants. If He says by His wounds you were healed, don’t consider the symptoms.<br><br>Understand that whatever you exalt, is what you worship. What you worship is what you truly believe in. Exalting God and His word above the contrary situations, is a sign of worship to Him. It pleases Him and provokes His power to work for you. This is the challenge of faith. Glory to Jesus!</div>
+  <div class="dev-body">It takes time for God to make you a leader. There are several phases and processes He takes you through to make you the man or woman you are created to be in this world.<br><br>1 Timothy 3:6 warns us not to put novices or immature people in positions of ministry. The point is that the training of God is necessary to mature you and turn you into a great leader.<br><br>One of the major aspects of God’s leadership training process are the silent years. Silent years represent the years of your obscurity from the public eye. They are years when you are being formed by God in character and spiritual stature.<br><br>Our opening scripture gives us an example of John the Baptist. Though he was born with a leadership mandate to go before the Lord and prepare the way for Him, he experienced many silent years in the wilderness - growing strong in Spirit before his manifestation to Israel.<br><br>The silent years are years when God shapes the leader’s character, changes their thinking to align with His, and clearly reveals to them His purpose and assignment for their life. It is also the time when God anoints you, awakens the gifts of the Spirit in your life, and teaches you how to function in the anointing He has given you.<br><br>It is sometimes called the wilderness experience. This is because it is filled with several tests that come to mature you and turn you into a responsible leader. With every test, there is a lesson to learn and wisdom to imparted to your heart.<br><br>Jesus experienced 18 silent years before His manifestation. Moses also experienced 40 silent years before God appeared to him at the burning bush and called him to be deliverer of Israel. Bible scholars say that Joseph also spent 18 years of testing (in Potiphar’s house and in prison) before he became prime minister and walked in the reality of God’s dreams for his life.<br><br>As a leader, silent years don’t mean that God has forgotten you; He is simply working on you to perfect all that concerns you. He is with you and building you into the leader He ordained you to be. He is strengthening your spirit, imparting wisdom and making clear His vision for your life. So, don’t panic or be discouraged. Accept God’s training and believe that in due time your vision will speak. Hallelujah!</div>
+  <div class="dev-insight">
+    <div class="dev-insight-label">✨ Healing Insight</div>
+    <div class="dev-insight-text">Understand that whatever you exalt, is what you worship. What you worship is what you truly believe in. Exalting God and His word above the contrary situations, is a sign of worship to Him. It pleases Him and provokes His power to work for you. This is the challenge of faith.</div>
+  </div>
+  <div class="dev-plan-wrap">
+    <div><span class="dev-plan-label">📖 Reading Plan</span>Job 32–33 · Acts 14</div>
+    <div><span class="dev-plan-label">🔖 Meditation</span>Numbers 13:30–33</div>
+  </div>
+  <div class="dev-prayer">
+    <span class="dev-prayer-label">🙏 Prayer</span>
+    <p>Heavenly Father, I thank You for every promise You have made to me in Your word. I believe that Your Word is true and it will be fulfilled as You said. I reject every form of doubt and unbelief that trys to hinder me from walking in Your promises to me. I declare that I am becoming all that You promised me, in Jesus Mighty Name!</p>
+  </div>
+  <div class="dev-archive-link">
+    <p>Missed a previous devotion?</p>
+    <a href="/archive">📚 View Past Devotions</a>
+  </div>
+</div>
+<nav id="bottom-nav" class="bottom-nav">
+  <a href="/" class="bnav-btn"><span class="bnav-icon">🏠</span><span class="bnav-label">Home</span></a>
+  <a href="/sermons" class="bnav-btn"><span class="bnav-icon">🎧</span><span class="bnav-label">Sermons</span></a>
+  <a href="/devotion" class="bnav-btn active"><span class="bnav-icon">📖</span><span class="bnav-label">Devotion</span></a>
+  <a href="/events" class="bnav-btn"><span class="bnav-icon">📅</span><span class="bnav-label">Events</span></a>
+  <a href="/testimonies" class="bnav-btn"><span class="bnav-icon">✨</span><span class="bnav-label">Stories</span></a>
+  <a href="/give" class="bnav-btn"><span class="bnav-icon">💛</span><span class="bnav-label">Give</span></a>
+  <a href="/connect" class="bnav-btn"><span class="bnav-icon">💬</span><span class="bnav-label">Connect</span></a>
+  <button class="bnav-btn" onclick="toggleMore()" id="bnav-more"><span class="bnav-icon">☰</span><span class="bnav-label">More</span></button>
+</nav>
+<div id="more-menu" style="display:none;position:fixed;bottom:60px;right:0;left:0;background:#0a1535;z-index:400;border-top:1px solid rgba(201,168,76,.3);padding:.75rem 1rem">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:400px;margin:0 auto">
+    <a href="/vision" style="background:rgba(255,255,255,.06);border-radius:8px;padding:10px;text-decoration:none;color:#fff;font-size:13px;text-align:center;display:block;font-family:'Poppins',sans-serif;font-weight:600">👁 Our Vision</a>
+    <a href="/books" style="background:rgba(255,255,255,.06);border-radius:8px;padding:10px;text-decoration:none;color:#fff;font-size:13px;text-align:center;display:block;font-family:'Poppins',sans-serif;font-weight:600">📚 Books</a>
+    <a href="/community" style="background:rgba(255,255,255,.06);border-radius:8px;padding:10px;text-decoration:none;color:#fff;font-size:13px;text-align:center;display:block;font-family:'Poppins',sans-serif;font-weight:600">🤝 Community</a>
+    <a href="/salvation" style="background:rgba(255,255,255,.06);border-radius:8px;padding:10px;text-decoration:none;color:#fff;font-size:13px;text-align:center;display:block;font-family:'Poppins',sans-serif;font-weight:600">🙏 Salvation</a>
+    <a href="/archive" style="background:rgba(201,168,76,.12);border-radius:8px;padding:10px;text-decoration:none;color:#c9a84c;font-size:13px;text-align:center;display:block;border:1px solid rgba(201,168,76,.3);grid-column:span 2;font-family:'Poppins',sans-serif;font-weight:600">📖 Devotion Archive</a>
+  </div>
+</div>
+<script>
+function toggleMore(){
+  var m=document.getElementById('more-menu');
+  m.style.display=m.style.display==='none'?'block':'none';
+}
+document.addEventListener('click',function(e){
+  var m=document.getElementById('more-menu');
+  var b=document.getElementById('bnav-more');
+  if(m&&m.style.display==='block'&&!m.contains(e.target)&&b&&!b.contains(e.target))
+    m.style.display='none';
+});
+</script>
+</body>
+</html<p><strong style="color:var(--gold)">Prayer:</strong> I pray for you that may God reveal His will and purpose for your life to you more clearly during your silent years. May your silent years not be wasted but be utilized to increase in wisdom and grace through the knowledge of God. May God anoint you and awaken the gifts He put within you. May His Hand uphold you in difficult times until your time of manifestation comes, in Jesus Mighty Name!</p>OCTYPE html>
+<html lang="en">
+<hAs a leader, silent years don’t mean that God has forgotten you; He is simply working on you to perfect all that concerns you. He is with you and building you into the leader He ordained you to be.</div>
+  </div>
+</nav>
+<div class="section">
+  <div class="dev-date">Tuesday, July 7th, 2026 · Apostle Julius P. Isabirye</div>
+  <div class="dev-topic">Leadership Series: In the Silent Years</div>
+  <div class="dev-verse-wrap">
+    <div class="dev-verse">“And the little boy grew and became strong in spirit; and he was in the deserts (wilderness) until the day of his appearing to Israel [the commencement of his public ministry].”</div>
+    <div class="dev-ref">Luke 1:80 (AMP)</div>
+  </div>
+  <div class="dev-body">It takes time for God to make you a leader. There are several phases and processes He takes you through to make you the man or woman you are created to be in this world.<br><br>1 Timothy 3:6 warns us not to put novices or immature people in positions of ministry. The point is that the training of God is necessary to mature you and turn you into a great leader.<br><br>One of the major aspects of God’s leadership training process are the silent years. Silent years represent the years of your obscurity from the public eye. They are years when you are being formed by God in character and spiritual stature.<br><br>Our opening scripture gives us an example of John the Baptist. Though he was born with a leadership mandate to go before the Lord and prepare the way for Him, he experienced many silent years in the wilderness - growing strong in Spirit before his manifestation to Israel.<br><br>The silent years are years when God shapes the leader’s character, changes their thinking to align with His, and clearly reveals to them His purpose and assignment for their life. It is also the time when God anoints you, awakens the gifts of the Spirit in your life, and teaches you how to function in the anointing He has given you.<br><br>It is sometimes called the wilderness experience. This is because it is filled with several tests that come to mature you and turn you into a responsible leader. With every test, there is a lesson to learn and wisdom to imparted to your heart.<br><br>Jesus experienced 18 silent years before His manifestation. Moses also experienced 40 silent years before God appeared to him at the burning bush and called him to be deliverer of Israel. Bible scholars say that Joseph also spent 18 years of testing (in Potiphar’s house and in prison) before he became prime minister and walked in the reality of God’s dreams for his life.<br><br>As a leader, silent years don’t mean that God has forgotten you; He is simply working on you to perfect all that concerns you. He is with you and building you into the leader He ordained you to be. He is strengthening your spirit, imparting wisdom and making clear His vision for your life. So, don’t panic or be discouraged. Accept God’s training and believe that in due time your vision will speak. Hallelujah!</div>
   <div class="dev-insight">
     <div class="dev-insight-label">✨ Healing Insight</div>
     <div class="dev-insight-text">Understand that whatever you exalt, is what you worship. What you worship is what you truly believe in. Exalting God and His word above the contrary situations, is a sign of worship to Him. It pleases Him and provokes His power to work for you. This is the challenge of faith.</div>
