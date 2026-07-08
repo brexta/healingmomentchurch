@@ -1,8 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
-<hThough the world is evil, you have God’s purity within you as an ability for treating all people with respect. Learn to yield to this purity everyday. It will prevent you from hurting or abusing anyone.</div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Today's devotion: With All Purity — The Healing Moment Church.">
+  <title>Daily Devotion — The Healing Moment Church</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+  /* ── Reset & Base ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy:   #0f1b4c;
+    --blue:   #1a3a8a;
+    --gold:   #c9a84c;
+    --lgold:  #f0d080;
+    --cyan:   #00e5ff;
+    --white:  #ffffff;
+    --muted:  #b8c8e8;
+    --card:   rgba(255,255,255,.05);
+    --border: rgba(201,168,76,.22);
+    --text:   #d4e0f0;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    background: var(--navy);
+    color: var(--text);
+    min-height: 100vh;
+    padding-bottom: 72px;
+  }
+
+  /* ── Typography ── */
+  h1,h2,h3,h4,h5 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--white);
+  }
+  .gold { color: var(--gold); }
+  .cyan { color: var(--cyan); }
+  .muted { color: var(--muted); font-size: .85rem; }
+
+  /* ── Desktop Nav ── */
+  .desktop-nav {
+    position: sticky; top: 0; z-index: 300;
+    background: rgba(15,27,76,.97);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 1.5rem;
+    display: none;
+  }
+  @media(min-width:769px){ .desktop-nav { display: block; } }
+  .desktop-nav .inner {
+    display: flex; align-items: center; justify-content: space-between;
+    max-width: 1100px; margin: 0 auto; height: 58px;
+  }
+  .desktop-nav .brand {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700; font-size: .95rem;
+    color: var(--gold); white-space: nowrap;
+  }
+  .desktop-nav .links { display: flex; align-items: center; gap: 1.6rem; }
+  .desktop-nav .links a {
+    color: var(--muted); text-decoration: none;
+    font-size: .8rem; font-weight: 500; letter-spacing: .5px;
+    transition: color .2s; white-space: nowrap;
+  }
+  .desktop-nav .links a:hover { color: var(--gold); }
+  .desktop-nav .links a.give-btn {
+    color: var(--gold); border: 1px solid var(--gold);
+    padding: 5px 14px; border-radius: 20px;
+  }
+  .desktop-nav .links a.give-btn:hover { background: var(--gold); color: var(--navy); }
+
+  /* ── Bottom Nav ── */
+  .bottom-nav {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: rgba(10,18,50,.97);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--border);
+    display: flex; align-items: stretch; justify-content: space-around;
+    height: 60px; z-index: 500;
+  }
+  .bnav-btn {
+    background: none; border: none; color: var(--muted);
+    cursor: pointer; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 2px; padding: 4px 6px; flex: 1;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none; transition: color .15s;
+  }
+  .bnav-btn:hover, .bnav-btn.active { color: var(--gold); }
+  .bnav-icon { font-size: 17px; line-height: 1; }
+  .bnav-label { font-size: 9px; font-weight: 500; letter-spacing: .3px; white-space: nowrap; }
+
+  /* ── More Menu ── */
+  .more-menu {
+    display: none; position: fixed; bottom: 60px; left: 0; right: 0;
+    background: rgba(10,18,50,.98); backdrop-filter: blur(12px);
+    z-index: 400; border-top: 1px solid var(--border);
+    padding: .75rem 1rem;
+  }
+  .more-menu .grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 8px; max-width: 400px; margin: 0 auto;
+  }
+  .more-menu a {
+    background: rgba(255,255,255,.06); border-radius: 8px;
+    padding: 10px; text-decoration: none; color: var(--white);
+    font-size: 13px; text-align: center; display: block;
+    transition: background .15s;
+  }
+  .more-menu a:hover { background: rgba(255,255,255,.12); }
+  .more-menu a.archive-link {
+    grid-column: span 2;
+    background: rgba(201,168,76,.12);
+    color: var(--gold);
+    border: 1px solid rgba(201,168,76,.3);
+  }
+
+  /* ── Page Wrapper ── */
+  .page { display: block !important; }
+  .section { padding: 1.25rem 1rem 2rem; max-width: 680px; margin: 0 auto; }
+  .section-title {
+    font-family: 'Poppins', sans-serif; font-weight: 800;
+    font-size: 1.5rem; color: var(--white); margin-bottom: .3rem;
+  }
+  .gold-line {
+    height: 3px; width: 50px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    border-radius: 2px; margin-bottom: 1.25rem;
+  }
+
+  /* ── Cards ── */
+  .card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1rem 1.1rem; margin-bottom: .9rem;
+  }
+
+  /* ── Archive specific ── */
+  .arc-month-banner {
+    background: linear-gradient(135deg, var(--blue), #1a3a8a);
+    border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem;
+    border: 1px solid var(--gold); text-align: center;
+  }
+  .arc-month-banner h2 {
+    font-size: 1.4rem; color: var(--gold); margin-bottom: .3rem;
+  }
+  .arc-month-banner p { color: var(--muted); font-size: .85rem; line-height: 1.6; }
+
+  .arc-week-label {
+    font-family: 'Poppins', sans-serif; font-weight: 700;
+    font-size: .7rem; color: var(--gold);
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: .3rem 0 .5rem;
+    border-bottom: 1px solid var(--border);
+    margin: 1.25rem 0 .75rem;
+  }
+
+  .arc-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; margin-bottom: .65rem; overflow: hidden;
+    transition: border-color .2s;
+  }
+  .arc-card:hover { border-color: rgba(201,168,76,.45); }
+
+  .arc-header {
+    padding: .85rem 1rem; cursor: pointer;
+    display: grid; grid-template-columns: 1fr auto;
+    align-items: center; gap: .5rem;
+  }
+  .arc-meta {
+    font-size: .72rem; color: var(--muted);
+    margin-bottom: .2rem; display: flex; gap: .6rem; flex-wrap: wrap;
+  }
+  .arc-ref { color: var(--gold); font-weight: 500; }
+  .arc-title {
+    font-family: 'Poppins', sans-serif; font-weight: 600;
+    font-size: .95rem; color: var(--white); line-height: 1.35;
+  }
+  .arc-chevron { color: var(--gold); font-size: .8rem; transition: transform .2s; }
+  .arc-chevron.open { transform: rotate(180deg); }
+
+  .arc-body { padding: 0 1rem 1rem; border-top: 1px solid var(--border); }
+
+  .arc-verse-box {
+    background: rgba(201,168,76,.08); border-radius: 8px;
+    padding: .85rem; margin: .85rem 0;
+    border-left: 3px solid var(--gold);
+  }
+  .arc-verse-text {
+    font-style: italic; font-size: .9rem; color: var(--white);
+    line-height: 1.75; margin-bottom: .35rem;
+  }
+  .arc-verse-ref {
+    font-family: 'Poppins', sans-serif; font-weight: 600;
+    font-size: .7rem; color: var(--gold); letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .arc-content {
+    font-size: .88rem; color: var(--text);
+    line-height: 1.8; margin-bottom: .85rem;
+  }
+
+  .arc-insight {
+    background: rgba(201,168,76,.08); border-radius: 8px;
+    padding: .85rem; margin-bottom: .85rem;
+    border: 1px solid rgba(201,168,76,.2);
+  }
+  .arc-insight-label {
+    font-family: 'Poppins', sans-serif; font-weight: 700;
+    font-size: .65rem; color: var(--gold);
+    letter-spacing: 2px; text-transform: uppercase; margin-bottom: .4rem;
+  }
+  .arc-insight-text {
+    font-style: italic; font-size: .88rem;
+    color: var(--white); line-height: 1.7;
+  }
+
+  .arc-plan {
+    display: grid; grid-template-columns: 1fr 1fr; gap: .75rem;
+    background: rgba(255,255,255,.04); border-radius: 8px;
+    padding: .75rem; margin-bottom: .85rem;
+    font-size: .83rem; color: var(--muted);
+  }
+  .arc-plan-label {
+    font-family: 'Poppins', sans-serif; font-weight: 600;
+    font-size: .65rem; color: var(--cyan);
+    letter-spacing: 1.5px; text-transform: uppercase;
+    display: block; margin-bottom: .3rem;
+  }
+
+  .arc-prayer {
+    background: rgba(0,229,255,.06); border-radius: 8px;
+    padding: .85rem; border-left: 3px solid var(--cyan);
+  }
+  .arc-prayer-label {
+    font-family: 'Poppins', sans-serif; font-weight: 700;
+    font-size: .65rem; color: var(--cyan);
+    letter-spacing: 2px; text-transform: uppercase;
+    display: block; margin-bottom: .5rem;
+  }
+  .arc-prayer p {
+    font-style: italic; font-size: .88rem;
+    color: var(--text); line-height: 1.75;
+  }
+
+  /* ── Devotion Page specific ── */
+  .dev-date {
+    font-size: .75rem; color: var(--muted);
+    margin-bottom: .5rem; font-weight: 300;
+  }
+  .dev-topic {
+    font-family: 'Poppins', sans-serif; font-weight: 800;
+    font-size: 1.55rem; color: var(--white);
+    line-height: 1.2; margin-bottom: 1rem;
+  }
+  .dev-verse-wrap {
+    background: rgba(201,168,76,.08); border-radius: 10px;
+    padding: 1rem; margin-bottom: 1rem;
+    border-left: 3px solid var(--gold);
+  }
+  .dev-verse {
+    font-style: italic; font-size: .95rem; color: var(--white);
+    line-height: 1.8; margin-bottom: .4rem;
+  }
+  .dev-ref {
+    font-family: 'Poppins', sans-serif; font-weight: 700;
+    font-size: .7rem; color: var(--gold);
+    letter-spacing: 1px; text-transform: uppercase;
+  }
+  .dev-body {
+    font-size: .93rem; color: var(--text);
+    line-height: 1.85; margin-bottom: 1.25rem;
+  }
+  .dev-insight {
+    background: rgba(201,168,76,.09); border-radius: 10px;
+    padding: 1rem; margin-bottom: 1rem;
+    border: 1px solid rgba(201,168,76,.25);
+  }
+  .dev-insight-label {
+    font-family: 'Poppins', sans-serif; font-weight: 700;
+    font-size: .65rem; color: var(--gold);
+    letter-spacing: 2px; text-transform: uppercase; margin-bottom: .5rem;
+  }
+  .dev-insight-text {
+    font-style: italic; font-size: .92rem;
+    color: var(--white); line-height: 1.7;
+  }
+  .dev-plan-wrap {
+    display: grid; grid-template-columns: 1fr 1fr; gap: .75rem;
+    background: rgba(255,255,255,.04); border-radius: 8px;
+    padding: .85rem; margin-bottom: 1rem;
+    font-size: .85rem; color: var(--muted);
+  }
+  .dev-plan-label {
+    font-family: 'Poppins', sans-serif; font-weight: 600;
+    font-size: .65rem; color: var(--cyan);
+    letter-spacing: 1.5px; text-transform: uppercase;
+    display: block; margin-bottom: .3rem;
+  }
+  .dev-prayer {
+    background: rgba(0,229,255,.06); border-radius: 10px;
+    padding: 1rem; border-left: 3px solid var(--cyan);
+    margin-bottom: 1.25rem;
+  }
+  .dev-prayer-label {
+    font-family: 'Poppins', sans-serif; font-weight: 700;
+    font-size: .65rem; color: var(--cyan);
+    letter-spacing: 2px; text-transform: uppercase;
+    display: block; margin-bottom: .5rem;
+  }
+  .dev-prayer p {
+    font-style: italic; font-size: .92rem;
+    color: var(--text); line-height: 1.75;
+  }
+  .dev-archive-link {
+    text-align: center; padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .dev-archive-link a {
+    display: inline-block;
+    background: rgba(201,168,76,.12); color: var(--gold);
+    font-family: 'Poppins', sans-serif; font-weight: 600;
+    font-size: .85rem; padding: 10px 24px;
+    border-radius: 24px; text-decoration: none;
+    border: 1px solid rgba(201,168,76,.35);
+    transition: background .2s;
+  }
+  .dev-archive-link a:hover { background: rgba(201,168,76,.25); }
+  .dev-archive-link p { font-size: .75rem; color: var(--muted); margin-bottom: .6rem; }
+</style>
+  <style>body{padding-bottom:72px}.bnav-btn.active{color:var(--gold)!important}</style>
+</head>
+<body>
+<nav class="desktop-nav">
+  <div class="inner">
+    <span class="brand">The Healing Moment Church</span>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/sermons">Sermons</a>
+      <a href="/devotion">Devotion</a>
+      <a href="/archive">Archive</a>
+      <a href="/events">Events</a>
+      <a href="/books">Books</a>
+      <a href="/connect">Connect</a>
+      <a href="/give" class="give-btn">Give</a>
+    </div>
   </div>
 </nav>
+<div class="page">
 <div class="section">
   <div class="dev-date">Wednesday, July 8th, 2026 · Apostle Julius P. Isabirye</div>
   <div class="dev-topic">With All Purity</div>
@@ -13,44 +364,27 @@
   <div class="dev-body">The King James version says “The elder women as mothers; the younger as sisters, with all purity.” As you walk with God, you will come to know that He will never ask you to do anything without first giving you the ability to do it. For everything God requests you to do, He first empowers you.<br><br>Forexample, God tells us to love one another because His love has been shed abroad our hearts through the Holy Spirit (Romans 5:5). He tells us to live by faith because He has already given us the spirit of faith (2 Cor. 4:13) and His word as the material for increasing in faith (Romans 10:17).<br><br>With this background, we can now understand what He means when He tells us to treat older women as mothers and younger women as sisters WITH ALL PURITY.<br><br>God is not only telling us how to treat people but He is actually revealing to us the ability He has given us to do so. The ability is the purity within your spirit.<br><br>As a child of God, your heart is pure and you have the ability to treat people right. God is not telling you to look for purity outside of you, but to simply yield to the purity He has already placed within you and use it as your ability to treat others right.<br><br>With all the purity in your spirit, you are able to treat old women as mothers and young women as sisters. This is part of your inheritance as a child of God.<br><br>Though the world is evil, you have God’s purity within you as an ability for treating all people with respect. Learn to yield to this purity everyday. It will prevent you from hurting or abusing anyone. You will always find yourself thinking and acting right towards all those around you even in difficult times because you have learnt to yield to the pure spirit within you. Hallelujah!</div>
   <div class="dev-insight">
     <div class="dev-insight-label">✨ Healing Insight</div>
-    <div class="dev-insight-text">Understand that whatever you exalt, is what you worship. What you worship is what you truly believe in. Exalting God and His word above the contrary situations, is a sign of worship to Him. It pleases Him and provokes His power to work for you. This is the challenge of faith.</div>
+    <div class="dev-insight-text">Though the world is evil, you have God’s purity within you as an ability for treating all people with respect. Learn to yield to this purity everyday. It will prevent you from hurting or abusing anyone.</div>
   </div>
   <div class="dev-plan-wrap">
-    <div><span class="dev-plan-label">📖 Reading Plan</span>Job 32–33 · Acts 14</div>
-    <div><span class="dev-plan-label">🔖 Meditation</span>Numbers 13:30–33</div>
+    <div><span class="dev-plan-label">Reading Plan</span>Job 36–37 · Acts 15:22–41</div>
+    <div><span class="dev-plan-label">Meditation</span>1 Timothy 5:2</div>
   </div>
   <div class="dev-prayer">
-    <span class="dev-prayer-label">🙏 Prayer</span>
-    <p>Heavenly Father, I thank You for every promise You have made to me in Your word. I believe that Your Word is true and it will be fulfilled as You said. I reject every form of doubt and unbelief that trys to hinder me from walking in Your promises to me. I declare that I am becoming all that You promised me, in Jesus Mighty Name!</p>
+    <span class="dev-prayer-label">Prayer</span>
+    <p>My Father, I thank You for always empowering me before instructing me. I truly believe that I have the ability to love from a pure heart and treat all people right. I yield to the purity within my spirit and release it as a divine force to guide my thoughts and keep my actions towards all people pure, in Jesus Mighty Name!</p>
   </div>
   <div class="dev-archive-link">
     <p>Missed a previous devotion?</p>
-    <a href="/archive">📚 View Past Devotions</a>
+    <a href="/archive">View Past Devotions</a>
   </div>
 </div>
-<nav id="bottom-nav" class="bottom-nav">
-  <a href="/" class="bnav-btn"><span class="bnav-icon">🏠</span><span class="bnav-label">Home</span></a>
-  <a href="/sermons" class="bnav-btn"><span class="bnav-icon">🎧</span><span class="bnav-label">Sermons</span></a>
-  <a href="/devotion" class="bnav-btn active"><span class="bnav-icon">📖</span><span class="bnav-label">Devotion</span></a>
-  <a href="/events" class="bnav-btn"><span class="bnav-icon">📅</span><span class="bnav-label">Events</span></a>
-  <a href="/testimonies" class="bnav-btn"><span class="bnav-icon">✨</span><span class="bnav-label">Stories</span></a>
-  <a href="/give" class="bnav-btn"><span class="bnav-icon">💛</span><span class="bnav-label">Give</span></a>
-  <a href="/connect" class="bnav-btn"><span class="bnav-icon">💬</span><span class="bnav-label">Connect</span></a>
-  <button class="bnav-btn" onclick="toggleMore()" id="bnav-more"><span class="bnav-icon">☰</span><span class="bnav-label">More</span></button>
-</nav>
-<div id="more-menu" style="display:none;position:fixed;bottom:60px;right:0;left:0;background:#0a1535;z-index:400;border-top:1px solid rgba(201,168,76,.3);padding:.75rem 1rem">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:400px;margin:0 auto">
-    <a href="/vision" style="background:rgba(255,255,255,.06);border-radius:8px;padding:10px;text-decoration:none;color:#fff;font-size:13px;text-align:center;display:block;font-family:'Poppins',sans-serif;font-weight:600">👁 Our Vision</a>
-    <a href="/books" style="background:rgba(255,255,255,.06);border-radius:8px;padding:10px;text-decoration:none;color:#fff;font-size:13px;text-align:center;display:block;font-family:'Poppins',sans-serif;font-weight:600">📚 Books</a>
-    <a href="/community" style="background:rgba(255,255,255,.06);border-radius:8px;padding:10px;text-decoration:none;color:#fff;font-size:13px;text-align:center;display:block;font-family:'Poppins',sans-serif;font-weight:600">🤝 Community</a>
-    <a href="/salvation" style="background:rgba(255,255,255,.06);border-radius:8px;padding:10px;text-decoration:none;color:#fff;font-size:13px;text-align:center;display:block;font-family:'Poppins',sans-serif;font-weight:600">🙏 Salvation</a>
-    <a href="/archive" style="background:rgba(201,168,76,.12);border-radius:8px;padding:10px;text-decoration:none;color:#c9a84c;font-size:13px;text-align:center;display:block;border:1px solid rgba(201,168,76,.3);grid-column:span 2;font-family:'Poppins',sans-serif;font-weight:600">📖 Devotion Archive</a>
-  </div>
 </div>
+
 <script>
 function toggleMore(){
   var m=document.getElementById('more-menu');
-  m.style.display=m.style.display==='none'?'block':'none';
+  m.style.display=m.style.display==='block'?'none':'block';
 }
 document.addEventListener('click',function(e){
   var m=document.getElementById('more-menu');
@@ -58,68 +392,13 @@ document.addEventListener('click',function(e){
   if(m&&m.style.display==='block'&&!m.contains(e.target)&&b&&!b.contains(e.target))
     m.style.display='none';
 });
-</script>
-</body>
-</html<p><strong style="color:var(--gold)">Prayer:</strong> My Father, I thank You for always empowering me before instructing me. I truly believe that I have the ability to love from a pure heart and treat all people right. I yield to the purity within my spirit and release it as a divine force to guide my thoughts and keep my actions towards all people pure, in Jesus Mighty Name!</p>OCTYPE html>
-<html lang="en">
-<hAs a leader, silent years don’t mean that God has forgotten you; He is simply working on you to perfect all that concerns you. He is with you and building you into the leader He ordained you to be.</div>
-  </div>
-</nav>
-<div class="section">
-  <div class="dev-date">Tuesday, July 7th, 2026 · Apostle Julius P. Isabirye</div>
-  <div class="dev-topic">Leadership Series: In the Silent Years</div>
-  <div class="dev-verse-wrap">
-    <div class="dev-verse">“And the little boy grew and became strong in spirit; and he was in the deserts (wilderness) until the day of his appearing to Israel [the commencement of his public ministry].”</div>
-    <div class="dev-ref">Luke 1:80 (AMP)</div>
-  </div>
-  <div class="dev-body">It takes time for God to make you a leader. There are several phases and processes He takes you through to make you the man or woman you are created to be in this world.<br><br>1 Timothy 3:6 warns us not to put novices or immature people in positions of ministry. The point is that the training of God is necessary to mature you and turn you into a great leader.<br><br>One of the major aspects of God’s leadership training process are the silent years. Silent years represent the years of your obscurity from the public eye. They are years when you are being formed by God in character and spiritual stature.<br><br>Our opening scripture gives us an example of John the Baptist. Though he was born with a leadership mandate to go before the Lord and prepare the way for Him, he experienced many silent years in the wilderness - growing strong in Spirit before his manifestation to Israel.<br><br>The silent years are years when God shapes the leader’s character, changes their thinking to align with His, and clearly reveals to them His purpose and assignment for their life. It is also the time when God anoints you, awakens the gifts of the Spirit in your life, and teaches you how to function in the anointing He has given you.<br><br>It is sometimes called the wilderness experience. This is because it is filled with several tests that come to mature you and turn you into a responsible leader. With every test, there is a lesson to learn and wisdom to imparted to your heart.<br><br>Jesus experienced 18 silent years before His manifestation. Moses also experienced 40 silent years before God appeared to him at the burning bush and called him to be deliverer of Israel. Bible scholars say that Joseph also spent 18 years of testing (in Potiphar’s house and in prison) before he became prime minister and walked in the reality of God’s dreams for his life.<br><br>As a leader, silent years don’t mean that God has forgotten you; He is simply working on you to perfect all that concerns you. He is with you and building you into the leader He ordained you to be. He is strengthening your spirit, imparting wisdom and making clear His vision for your life. So, don’t panic or be discouraged. Accept God’s training and believe that in due time your vision will speak. Hallelujah!</div>
-  <div class="dev-insight">
-    <div class="dev-insight-label">✨ Healing Insight</div>
-    <div class="dev-insight-text">Understand that whatever you exalt, is what you worship. What you worship is what you truly believe in. Exalting God and His word above the contrary situations, is a sign of worship to Him. It pleases Him and provokes His power to work for you. This is the challenge of faith.</div>
-  </div>
-  <div class="dev-plan-wrap">
-    <div><span class="dev-plan-label">📖 Reading Plan</span>Job 32–33 · Acts 14</div>
-    <div><span class="dev-plan-label">🔖 Meditation</span>Numbers 13:30–33</div>
-  </div>
-  <div class="dev-prayer">
-    <span class="dev-prayer-label">🙏 Prayer</span>
-    <p>Heavenly Father, I thank You for every promise You have made to me in Your word. I believe that Your Word is true and it will be fulfilled as You said. I reject every form of doubt and unbelief that trys to hinder me from walking in Your promises to me. I declare that I am becoming all that You promised me, in Jesus Mighty Name!</p>
-  </div>
-  <div class="dev-archive-link">
-    <p>Missed a previous devotion?</p>
-    <a href="/archive">📚 View Past Devotions</a>
-  </div>
-</div>
-<nav id="bottom-nav" class="bottom-nav">
-  <a href="/" class="bnav-btn"><span class="bnav-icon">🏠</span><span class="bnav-label">Home</span></a>
-  <a href="/sermons" class="bnav-btn"><span class="bnav-icon">🎧</span><span class="bnav-label">Sermons</span></a>
-  <a href="/devotion" class="bnav-btn active"><span class="bnav-icon">📖</span><span class="bnav-label">Devotion</span></a>
-  <a href="/events" class="bnav-btn"><span class="bnav-icon">📅</span><span class="bnav-label">Events</span></a>
-  <a href="/testimonies" class="bnav-btn"><span class="bnav-icon">✨</span><span class="bnav-label">Stories</span></a>
-  <a href="/give" class="bnav-btn"><span class="bnav-icon">💛</span><span class="bnav-label">Give</span></a>
-  <a href="/connect" class="bnav-btn"><span class="bnav-icon">💬</span><span class="bnav-label">Connect</span></a>
-  <button class="bnav-btn" onclick="toggleMore()" id="bnav-more"><span class="bnav-icon">☰</span><span class="bnav-label">More</span></button>
-</nav>
-<div id="more-menu" style="display:none;position:fixed;bottom:60px;right:0;left:0;background:#0a1535;z-index:400;border-top:1px solid rgba(201,168,76,.3);padding:.75rem 1rem">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:400px;margin:0 auto">
-    <a href="/vision" style="background:rgba(255,255,255,.06);border-radius:8px;padding:10px;text-decoration:none;color:#fff;font-size:13px;text-align:center;display:block;font-family:'Poppins',sans-serif;font-weight:600">👁 Our Vision</a>
-    <a href="/books" style="background:rgba(255,255,255,.06);border-radius:8px;padding:10px;text-decoration:none;color:#fff;font-size:13px;text-align:center;display:block;font-family:'Poppins',sans-serif;font-weight:600">📚 Books</a>
-    <a href="/community" style="background:rgba(255,255,255,.06);border-radius:8px;padding:10px;text-decoration:none;color:#fff;font-size:13px;text-align:center;display:block;font-family:'Poppins',sans-serif;font-weight:600">🤝 Community</a>
-    <a href="/salvation" style="background:rgba(255,255,255,.06);border-radius:8px;padding:10px;text-decoration:none;color:#fff;font-size:13px;text-align:center;display:block;font-family:'Poppins',sans-serif;font-weight:600">🙏 Salvation</a>
-    <a href="/archive" style="background:rgba(201,168,76,.12);border-radius:8px;padding:10px;text-decoration:none;color:#c9a84c;font-size:13px;text-align:center;display:block;border:1px solid rgba(201,168,76,.3);grid-column:span 2;font-family:'Poppins',sans-serif;font-weight:600">📖 Devotion Archive</a>
-  </div>
-</div>
-<script>
-function toggleMore(){
-  var m=document.getElementById('more-menu');
-  m.style.display=m.style.display==='none'?'block':'none';
-}
-document.addEventListener('click',function(e){
-  var m=document.getElementById('more-menu');
-  var b=document.getElementById('bnav-more');
-  if(m&&m.style.display==='block'&&!m.contains(e.target)&&b&&!b.contains(e.target))
-    m.style.display='none';
-});
+(function(){
+  var p=window.location.pathname.replace(/\/+$/,'')||'/';
+  document.querySelectorAll('.bnav-btn[href],.desktop-nav a').forEach(function(el){
+    var h=(el.getAttribute('href')||'').replace(/\/+$/,'')||'/';
+    if(h===p)el.classList.add('active');
+  });
+})();
 </script>
 </body>
 </html>
