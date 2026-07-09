@@ -320,7 +320,155 @@ body{font-family:'Lato',sans-serif;background:#0a1535;color:var(--text-dark)}
 .bnav-label{font-size:9px;font-weight:600;letter-spacing:.3px;white-space:nowrap}
 
 </style>
-  <style>body{padding-bottom:72px}.bnav-btn.active{color:var(--gold)!important}</style>
+  <style>
+  /* Page visibility fix */
+  .page { display: block !important; }
+  body { padding-bottom: 72px; }
+  .bnav-btn.active { color: var(--gold) !important; }
+
+  /* Devotion-specific styles */
+  .dev-topic {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--white, #fff);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .dev-date {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: .78rem;
+    color: var(--muted, #b8c8e8);
+    margin-bottom: .5rem;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .dev-verse-wrap {
+    background: rgba(201,168,76,.08);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid #c9a84c;
+  }
+  .dev-verse {
+    font-family: 'Roboto', sans-serif !important;
+    font-style: italic;
+    font-size: .95rem;
+    color: #fff;
+    line-height: 1.8;
+    margin-bottom: .4rem;
+  }
+  .dev-ref {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: .7rem;
+    color: #c9a84c;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .dev-body {
+    font-family: 'Roboto', sans-serif;
+    font-size: .93rem;
+    color: #d4e0f0;
+    line-height: 1.85;
+    margin-bottom: 1.25rem;
+  }
+  .dev-insight {
+    background: rgba(201,168,76,.09);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(201,168,76,.25);
+  }
+  .dev-insight-label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: .65rem;
+    color: #c9a84c;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: .5rem;
+    display: block;
+  }
+  .dev-insight-text {
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-size: .92rem;
+    color: #fff;
+    line-height: 1.7;
+  }
+  .dev-plan-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .75rem;
+    background: rgba(255,255,255,.04);
+    border-radius: 8px;
+    padding: .85rem;
+    margin-bottom: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: .85rem;
+    color: #b8c8e8;
+  }
+  .dev-plan-label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: .65rem;
+    color: #00e5ff;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: .3rem;
+  }
+  .dev-prayer {
+    background: rgba(0,229,255,.06);
+    border-radius: 10px;
+    padding: 1rem;
+    border-left: 3px solid #00e5ff;
+    margin-bottom: 1.25rem;
+  }
+  .dev-prayer-label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: .65rem;
+    color: #00e5ff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: .5rem;
+  }
+  .dev-prayer p {
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-size: .92rem;
+    color: #d4e0f0;
+    line-height: 1.75;
+    margin: 0;
+  }
+  .dev-archive-link {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(201,168,76,.2);
+  }
+  .dev-archive-link p {
+    font-size: .75rem;
+    color: #b8c8e8;
+    margin-bottom: .6rem;
+    font-family: 'Roboto', sans-serif;
+  }
+  .dev-archive-link a {
+    display: inline-block;
+    background: rgba(201,168,76,.12);
+    color: #c9a84c;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: .85rem;
+    padding: 10px 24px;
+    border-radius: 24px;
+    text-decoration: none;
+    border: 1px solid rgba(201,168,76,.35);
+  }
+</style>
 </head>
 <body>
 <nav class="desktop-nav" style="position:sticky;top:0;z-index:300;background:var(--navy);border-bottom:1px solid rgba(201,168,76,.25);padding:0 1.5rem">
