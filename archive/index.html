@@ -334,6 +334,43 @@
   }
   .dev-archive-link a:hover { background: rgba(201,168,76,.25); }
   .dev-archive-link p { font-size: .75rem; color: var(--muted); margin-bottom: .6rem; }
+
+  /* ── Readability: softer text on dark background ── */
+  :root {
+    --text-body:  #c8d8ee;
+    --text-head:  #eef2ff;
+    --text-verse: #e8eeff;
+    --text-muted: #9aacc8;
+  }
+  body { color: var(--text-body) !important; }
+
+  /* Headings */
+  h1,h2,h3,h4,h5,
+  .section-title, .hero-title, .hero-tagline,
+  .dev-topic, .book-title, .event-title,
+  .leader-name, .vision-title, .model-name,
+  .arc-title { color: var(--text-head) !important; }
+
+  /* Body / paragraph text */
+  p, .dev-body, .arc-content,
+  .book-desc, .event-desc, .leader-role,
+  .connect-val, .give-desc, .community-text { color: var(--text-body) !important; }
+
+  /* Italic / verse / insight */
+  .dev-verse, .arc-verse-text, .dev-insight-text,
+  .arc-insight-text, .arc-prayer p, .dev-prayer p,
+  blockquote, i, em { color: var(--text-verse) !important; }
+
+  /* Muted / small text */
+  .dev-date, .arc-meta, .arc-date, .book-author,
+  .event-tag, .arc-plan, .muted,
+  .dev-plan-wrap { color: var(--text-muted) !important; }
+
+  /* Keep gold and cyan as-is */
+  .gold, .dev-ref, .arc-ref, .arc-verse-ref,
+  [style*="color:var(--gold)"],
+  [style*="color:#c9a84c"] { color: #c9a84c !important; }
+
 </style>
 </head>
 <body>
