@@ -377,6 +377,41 @@ body{font-family:'Roboto',sans-serif;background:#0a1535;color:var(--text-dark)}
   [style*="color:var(--gold)"],
   [style*="color:#c9a84c"] { color: #c9a84c !important; }
 
+
+  /* ── Light background sections: use dark text ── */
+  .book-cover-info,
+  .book-modal, .modal-content,
+  [style*="background:#fff"],
+  [style*="background: #fff"],
+  [style*="background:white"],
+  [style*="background:#f9f9fc"],
+  [style*="background:#f3f0e8"],
+  .contact-card, .form-group,
+  .give-card, .give-section-light,
+  .testimonies-form, .salvation-form,
+  .connect-form, input, textarea, select {
+    color: #1a1a2e !important;
+  }
+
+  /* Form inputs always dark text */
+  input, textarea, select {
+    color: #1a1a2e !important;
+    background: #fff !important;
+  }
+  input::placeholder, textarea::placeholder {
+    color: #666 !important;
+  }
+
+  /* Book info cards on white */
+  .book-cover-info h4,
+  .book-cover-info .book-author,
+  .book-cover-info p,
+  .book-cover-info div { color: #1a1a2e !important; }
+
+  /* Modal content */
+  .modal-body, .modal-title,
+  .modal-desc { color: #1a1a2e !important; }
+
 </style>
   
 <style>
