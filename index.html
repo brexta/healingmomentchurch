@@ -377,6 +377,19 @@ body{font-family:'Roboto',sans-serif;background:#0a1535;color:var(--text-dark)}
   [style*="color:var(--gold)"],
   [style*="color:#c9a84c"] { color: #c9a84c !important; }
 
+
+  /* ── Month of Wisdom banner ── */
+  .month-banner{
+    display:inline-flex;align-items:center;gap:.5rem;
+    background:linear-gradient(135deg,rgba(201,168,76,.18),rgba(201,168,76,.08));
+    border:1px solid rgba(201,168,76,.4);
+    border-radius:24px;padding:.45rem 1.1rem;margin-top:.9rem;
+    font-family:'Poppins',sans-serif;font-size:.72rem;font-weight:700;
+    color:#c9a84c;letter-spacing:1.5px;text-transform:uppercase;
+    position:relative;z-index:1
+  }
+  .month-banner span{font-size:1rem}
+
 </style>
   
 <style>
@@ -436,7 +449,10 @@ body{padding-bottom:70px}
       <button class="btn-gold" onclick="window.location='/vision'">Our Four-Fold Vision</button>
       <button class="btn-outline" onclick="window.location='/sermons'">Watch Sermons</button>
     </div>
-    <div class="hero-info">
+    <div style="text-align:center;position:relative;z-index:1;margin-top:.6rem">
+    <div class="month-banner"><span>&#128218;</span> August 2026 &mdash; Month of Wisdom</div>
+  </div>
+  <div class="hero-info">
       <div class="hero-chip">Every <strong>Sunday</strong> · 10:00 AM – 1:00 PM</div>
       <div class="hero-chip"><strong>Stallion Hotel, Busega</strong> · Kampala</div>
       <div class="hero-chip">Ap. Julius P. &amp; Pr. Nancy Isabirye</div>
