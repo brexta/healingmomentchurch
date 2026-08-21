@@ -3,66 +3,250 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Join The Healing Moment Church live every Sunday, 11am, Stallion Hotel, Busega.">
-  <title>Live — The Healing Moment Church</title>
+  <meta name="description" content="Join The Healing Moment Church live audio stream every Sunday from Kampala, Uganda. Listen live or catch the recording afterwards.">
+  <title>Live Audio Stream — The Healing Moment Church</title>
+
+  <!-- Rich preview when shared on WhatsApp / Facebook -->
+  <meta property="og:title" content="Live Audio — The Healing Moment Church">
+  <meta property="og:description" content="Join us live every Sunday. Audio only, so it uses very little data.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://healingmomentchurch.org/live">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
   <style>
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  :root{--navy:#0f1b4c;--gold:#c9a84c;--lgold:#f0d080;--mid:#1a3a8a;--text-body:#e8ecfa;--muted:#b8c8e8}
-  body{font-family:'Roboto',sans-serif;background:#0a1535;color:var(--text-body);min-height:100vh}
-  a{text-decoration:none}
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  :root{
+    --navy:#0f1b4c; --blue:#1a3a8a; --gold:#c9a84c; --lgold:#f0d080;
+    --white:#fff; --muted:#b8c8e8; --border:rgba(201,168,76,.22); --text:#d4e0f0;
+    --live:#c0392b;
+  }
+  body{font-family:'Roboto',sans-serif;background:var(--navy);color:var(--text);min-height:100vh;padding-bottom:2rem}
+  h1,h2{font-family:'Poppins',sans-serif;font-weight:700;color:var(--white)}
 
-  .section{max-width:640px;margin:0 auto;padding:2.5rem 1.25rem 3rem;text-align:center}
-  .live-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.15);color:var(--gold);font-size:12px;font-weight:700;letter-spacing:1px;padding:6px 16px;border-radius:20px;border:1px solid rgba(201,168,76,.4);margin-bottom:1.5rem}
-  .dot{width:8px;height:8px;border-radius:50%;background:#e94b4b}
+  .desktop-nav{position:sticky;top:0;z-index:300;background:rgba(15,27,76,.97);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);padding:0 1.5rem;display:none}
+  @media(min-width:769px){.desktop-nav{display:block}}
+  .desktop-nav .inner{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;height:58px}
+  .desktop-nav .brand{font-family:'Poppins',sans-serif;font-weight:700;font-size:.95rem;color:var(--gold)}
+  .desktop-nav .links{display:flex;align-items:center;gap:1.4rem}
+  .desktop-nav .links a{color:var(--muted);text-decoration:none;font-size:.8rem;font-weight:500}
+  .desktop-nav .links a:hover{color:var(--gold)}
+  .give-btn{border:1px solid var(--gold);border-radius:20px;padding:5px 14px;color:var(--gold)!important}
 
-  .page-title{font-family:'Poppins',sans-serif;font-weight:800;color:#fff;font-size:1.7rem;margin-bottom:1rem}
-  .service-card{background:linear-gradient(150deg,var(--navy),var(--mid));border:1px solid rgba(201,168,76,.3);border-radius:14px;padding:1.8rem 1.5rem;margin-bottom:1.5rem}
-  .service-card p{font-size:.95rem;line-height:1.7;color:var(--text-body);margin-bottom:.6rem}
-  .service-card .time{font-family:'Poppins',sans-serif;font-weight:700;color:var(--gold);font-size:1.15rem;margin-bottom:.4rem}
+  .back-link{display:block;padding:.9rem 1rem 0;font-size:.8rem;color:var(--gold);text-decoration:none}
+  @media(min-width:769px){.back-link{display:none}}
 
-  .join-btn{display:inline-block;background:var(--gold);color:var(--navy);font-family:'Poppins',sans-serif;font-weight:700;font-size:1rem;padding:13px 28px;border-radius:8px;margin-top:.4rem}
-  .join-btn:hover{background:var(--lgold)}
-  .join-btn.disabled{background:rgba(255,255,255,.08);color:var(--muted);border:1px dashed rgba(255,255,255,.2);pointer-events:none}
+  .wrap{max-width:640px;margin:0 auto;padding:1.5rem 1.15rem}
 
-  .whatsapp-note{font-size:.85rem;color:var(--muted);line-height:1.7;margin-top:1.5rem}
-  .whatsapp-note a{color:var(--gold);font-weight:700}
+  /* ── Status card ─────────────────────────────────────────────── */
+  .status-card{background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:14px;
+    padding:1.6rem 1.3rem;text-align:center;margin-bottom:1.1rem}
+  .status-pill{display:inline-flex;align-items:center;gap:7px;font-family:'Poppins',sans-serif;
+    font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    padding:6px 14px;border-radius:20px;margin-bottom:1rem}
+  .status-pill.on{background:var(--live);color:#fff}
+  .status-pill.off{background:rgba(255,255,255,.1);color:var(--muted)}
+  .dot{width:8px;height:8px;border-radius:50%;background:#fff;display:inline-block}
+  .status-pill.on .dot{animation:blink 1.4s ease-in-out infinite}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+
+  .status-card h1{font-size:1.35rem;color:var(--gold);margin-bottom:.55rem;line-height:1.3}
+  .status-card .lead{font-size:.9rem;line-height:1.65;color:var(--text);margin-bottom:1.3rem}
+  .countdown{font-family:'Poppins',sans-serif;font-size:1.05rem;color:var(--white);
+    background:rgba(255,255,255,.06);border-radius:10px;padding:.7rem;margin-bottom:1.2rem}
+
+  .join-btn{display:block;background:var(--live);color:#fff;font-family:'Poppins',sans-serif;
+    font-weight:700;font-size:1.02rem;text-decoration:none;padding:16px 24px;border-radius:10px;
+    transition:.15s;line-height:1.35}
+  .join-btn:hover{background:#d8463a}
+  .join-btn.waiting{background:rgba(255,255,255,.07);color:var(--muted);cursor:default;
+    border:1px dashed rgba(201,168,76,.35)}
+
+  .sub-note{font-size:.78rem;color:var(--muted);line-height:1.6;margin-top:.9rem}
+
+  /* ── Info blocks ─────────────────────────────────────────────── */
+  .info-card{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:12px;
+    padding:1.1rem 1.2rem;margin-bottom:.85rem}
+  .info-card h2{font-size:.95rem;color:var(--white);margin-bottom:.5rem}
+  .info-card p{font-size:.85rem;line-height:1.65;color:var(--text);margin-bottom:.5rem}
+  .info-card p:last-child{margin-bottom:0}
+  .info-card a{color:var(--gold);text-decoration:none;font-weight:600}
+  .info-card a:hover{text-decoration:underline}
+  .when-row{display:flex;align-items:baseline;gap:.6rem;font-size:.85rem;margin-bottom:.35rem}
+  .when-row span:first-child{color:var(--muted);min-width:74px}
+
+  @media(max-width:600px){
+    .wrap{padding:1rem .8rem}
+    .status-card{padding:1.35rem 1rem}
+    .status-card h1{font-size:1.18rem}
+  }
   </style>
 </head>
 <body>
 
-<div class="section">
-  <span class="live-badge"><span class="dot"></span> SUNDAY LIVE STREAM</span>
-  <div class="page-title">Join Us Live</div>
+<nav class="desktop-nav">
+  <div class="inner">
+    <span class="brand">The Healing Moment Church</span>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/live">🔴 Live</a>
+      <a href="/sermons">Sermons</a>
+      <a href="/devotion">Devotion</a>
+      <a href="/archive">Archive</a>
+      <a href="/events">Events</a>
+      <a href="/books">Books</a>
+      <a href="/connect">Connect</a>
+      <a href="/give" class="give-btn">Give</a>
+    </div>
+  </div>
+</nav>
+<a href="/" class="back-link">&larr; Back Home</a>
 
-  <div class="service-card">
-    <p class="time">Every Sunday, 11:00am (Kampala time)</p>
-    <p>Stallion Hotel, Busega — in person or online, wherever you are.</p>
+<div class="wrap">
 
-    <!--
-      ═══════════════════════════════════════════════════════════
-      WEEKLY UPDATE — optional, do this Sunday morning if you want
-      the button below to work:
-        1. Create your SmartKit room as usual
-        2. Copy the room link
-        3. Replace "PASTE_THIS_WEEKS_LIVE_LINK_HERE" below with it
-        4. Change class="join-btn disabled" to class="join-btn"
-        5. Re-upload this file
-      If you skip this, the button stays greyed out and visitors
-      rely on the WhatsApp note below instead — the page still
-      works fine either way, this step is optional polish.
-      ═══════════════════════════════════════════════════════════
-    -->
-    <a href="https://smartkit.cc/healingmoment-live" target="_blank" class="join-btn disabled">🔴 Join Every Sunday's Live Audio Stream</a>
+  <div class="status-card">
+    <div class="status-pill off" id="pill"><span class="dot"></span><span id="pill-text">Checking…</span></div>
+    <h1 id="headline">Sunday Live Audio</h1>
+    <p class="lead" id="lead">Loading stream status…</p>
+    <div class="countdown" id="countdown" style="display:none"></div>
+    <a class="join-btn waiting" id="joinBtn" href="#">Checking stream…</a>
+    <p class="sub-note" id="subnote"></p>
   </div>
 
-  <p class="whatsapp-note">
-    The live link is shared on our HEALING MOMENT CHURCH WhatsApp group every Sunday morning.<br>
-    Not in the group yet? <a href="https://wa.me/256781939598?text=I%27d%20like%20to%20join%20the%20HMC%20WhatsApp%20group%20for%20Sunday%20live%20links" target="_blank">Message us here</a> to get added.
-  </p>
+  <div class="info-card">
+    <h2>When we go live</h2>
+    <div class="when-row"><span>Every Sunday</span><span id="when-time">11:00am – 1:00pm (EAT, Kampala time)</span></div>
+    <p style="margin-top:.6rem">The stream is <strong>audio only</strong>, so it uses far less data than
+      video — ideal if you are listening on a mobile bundle.</p>
+  </div>
+
+  <div class="info-card">
+    <h2>Get the link on WhatsApp</h2>
+    <p>We share the live link in our WhatsApp group every Sunday morning, along with the daily devotion.
+      If you would like to be added, <a href="/connect">send us a message</a> and we will add you.</p>
+  </div>
+
+  <div class="info-card">
+    <h2>Missed the live stream?</h2>
+    <p>Past messages are available any time on our <a href="/sermons">Sermons page</a> —
+      listen online or download to play offline during the week.</p>
+  </div>
+
 </div>
 
+<script>
+/* ══════════════════════════════════════════════════════════════════
+   LIVE STATUS LOGIC
+
+   Why this exists: if someone taps the SmartKit link on a Tuesday they
+   land in an empty room with no explanation. This page checks the time
+   FIRST and only hands out the link during (and shortly before) the
+   service, so an early click gets a countdown instead of a dead room.
+
+   All times are Kampala (EAT, UTC+3). We compute the Kampala time from
+   the UTC clock rather than trusting the visitor's device timezone —
+   a member listening from Qatar or the UK still sees the correct
+   Sunday-morning countdown.
+
+   ── TO CHANGE THE SERVICE TIME, EDIT THESE THREE NUMBERS ──────────
+═══════════════════════════════════════════════════════════════════ */
+var STREAM_URL   = "https://smartkit.cc/healingmoment-live";
+var START_HOUR   = 11;   // 11:00am Kampala — stream goes live
+var END_HOUR     = 13;   // 1:00pm  Kampala — stream ends
+var OPEN_EARLY   = 30;   // minutes before START_HOUR that the button unlocks
+
+/* Kampala time = UTC + 3, no daylight saving. */
+function kampalaNow(){
+  var now = new Date();
+  return new Date(now.getTime() + (now.getTimezoneOffset() + 180) * 60000);
+}
+
+function nextSunday(k){
+  var d = new Date(k.getTime());
+  var days = (7 - d.getDay()) % 7;          // 0 = Sunday
+  d.setDate(d.getDate() + days);
+  d.setHours(START_HOUR, 0, 0, 0);
+  if (d.getTime() <= k.getTime()) d.setDate(d.getDate() + 7);
+  return d;
+}
+
+function plural(n, w){ return n + " " + w + (n === 1 ? "" : "s"); }
+
+function render(){
+  var k        = kampalaNow();
+  var isSunday = k.getDay() === 0;
+  var mins     = k.getHours() * 60 + k.getMinutes();
+  var openFrom = START_HOUR * 60 - OPEN_EARLY;
+  var closeAt  = END_HOUR * 60;
+
+  var pill     = document.getElementById('pill');
+  var pillText = document.getElementById('pill-text');
+  var headline = document.getElementById('headline');
+  var lead     = document.getElementById('lead');
+  var btn      = document.getElementById('joinBtn');
+  var cd       = document.getElementById('countdown');
+  var sub      = document.getElementById('subnote');
+
+  /* ── LIVE NOW ── */
+  if (isSunday && mins >= openFrom && mins < closeAt) {
+    pill.className = 'status-pill on';
+    pillText.textContent = 'Live Now';
+    headline.textContent = 'We are live right now';
+    lead.textContent = 'Tap below to join the live audio stream. It opens in a new tab.';
+    cd.style.display = 'none';
+    btn.className = 'join-btn';
+    btn.href = STREAM_URL;
+    btn.target = '_blank';
+    btn.rel = 'noopener';
+    btn.textContent = 'Click here to join the live audio stream →';
+    sub.textContent = 'Having trouble? Close the tab and tap the button again.';
+    return;
+  }
+
+  /* ── SUNDAY, JUST FINISHED ── */
+  if (isSunday && mins >= closeAt) {
+    pill.className = 'status-pill off';
+    pillText.textContent = 'Ended';
+    headline.textContent = "Today's stream has ended";
+    lead.textContent = 'Thank you for joining us. The recording will be available on our Sermons page.';
+    cd.style.display = 'none';
+    btn.className = 'join-btn waiting';
+    btn.removeAttribute('target');
+    btn.href = '/sermons';
+    btn.className = 'join-btn';
+    btn.textContent = 'Listen to past messages →';
+    sub.textContent = 'We go live again next Sunday at ' + START_HOUR + ':00am.';
+    return;
+  }
+
+  /* ── NOT SUNDAY YET ── */
+  var target = nextSunday(k);
+  var diff   = target.getTime() - k.getTime();
+  var d = Math.floor(diff / 86400000);
+  var h = Math.floor((diff % 86400000) / 3600000);
+  var m = Math.floor((diff % 3600000) / 60000);
+
+  pill.className = 'status-pill off';
+  pillText.textContent = 'Offline';
+  headline.textContent = 'The stream is not live yet';
+  lead.textContent = 'Our live audio stream opens every Sunday morning. '
+    + 'Bookmark this page — the button below unlocks automatically when we go on air.';
+  cd.style.display = 'block';
+  cd.textContent = 'Live in ' + (d > 0 ? plural(d, 'day') + ', ' : '')
+                 + plural(h, 'hour') + ' and ' + plural(m, 'minute');
+  btn.className = 'join-btn waiting';
+  btn.removeAttribute('href');
+  btn.removeAttribute('target');
+  btn.textContent = 'Link opens Sunday at ' + START_HOUR + ':00am';
+  sub.textContent = 'No need to check back — just open this page on Sunday and the button will be ready.';
+}
+
+render();
+setInterval(render, 30000);   // keep the countdown ticking
+</script>
+
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1f11b9b7a1cd4e18b14cc33d4a9e5d25"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
