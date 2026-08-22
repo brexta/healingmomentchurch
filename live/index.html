@@ -11,6 +11,8 @@
   <meta property="og:description" content="Join us live every Sunday. Audio only, so it uses very little data.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://healingmomentchurch.org/live">
+  <meta property="og:image" content="https://healingmomentchurch.org/live/live-og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,6 +41,15 @@
   @media(min-width:769px){.back-link{display:none}}
 
   .wrap{max-width:640px;margin:0 auto;padding:1.5rem 1.15rem}
+
+  /* The flyer is a portrait poster. Rather than cropping it (which cuts the
+     headline and the website URL), we cap its width so it reads as a poster
+     and the join button stays visible without scrolling. */
+  .flyer{display:block;width:100%;max-width:300px;margin:0 auto 1.1rem;border-radius:14px;
+    overflow:hidden;border:1px solid var(--border);background:#fff}
+  .flyer img{display:block;width:100%;height:auto}
+  @media(max-width:600px){ .flyer{max-width:250px} }
+
 
   /* ── Status card ─────────────────────────────────────────────── */
   .status-card{background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:14px;
@@ -75,7 +86,9 @@
   .info-card a{color:var(--gold);text-decoration:none;font-weight:600}
   .info-card a:hover{text-decoration:underline}
   .when-row{display:flex;align-items:baseline;gap:.6rem;font-size:.85rem;margin-bottom:.35rem}
-  .when-row span:first-child{color:var(--muted);min-width:74px}
+  .when-row span:first-child{color:var(--muted);min-width:66px;font-size:.8rem}
+  .timing-note{font-size:.8rem!important;color:var(--muted)!important;border-left:2px solid var(--gold);
+    padding-left:.7rem;margin-top:.7rem}
 
   @media(max-width:600px){
     .wrap{padding:1rem .8rem}
@@ -106,6 +119,12 @@
 
 <div class="wrap">
 
+  <div class="flyer">
+    <img src="/live/sunday-livestream.jpg"
+         alt="Never miss a Sunday — Sunday Livestream on the Healing Moment Church website, 11am EAT with Apostle Julius P. Isabirye"
+         width="800" height="1100">
+  </div>
+
   <div class="status-card">
     <div class="status-pill off" id="pill"><span class="dot"></span><span id="pill-text">Checking…</span></div>
     <h1 id="headline">Sunday Live Audio</h1>
@@ -116,22 +135,12 @@
   </div>
 
   <div class="info-card">
-    <h2>When we go live</h2>
-    <div class="when-row"><span>Every Sunday</span><span id="when-time">11:00am – 1:00pm (EAT, Kampala time)</span></div>
-    <p style="margin-top:.6rem">The stream is <strong>audio only</strong>, so it uses less data than
-      video.</p>
-  </div>
-
-  <div class="info-card">
-    <h2>Get the link on WhatsApp</h2>
-    <p>We also share the live link in our WhatsApp group every Sunday morning, along with the daily devotion.
-      If you would like to be added, <a href="/connect">send us a message</a> and we will add you.</p>
-  </div>
-
-  <div class="info-card">
-    <h2>Missed the live stream?</h2>
-    <p>Past messages are available any time on our <a href="/sermons">Sermons page</a> —
-      listen online or download to play offline during the week.</p>
+    <div class="when-row"><span>Service</span><span>Sundays, 10:00am &mdash; at Stallion Hotel, Busega</span></div>
+    <div class="when-row"><span>Stream</span><span id="streamTimes">Sundays, 11:00am &ndash; 1:00pm (EAT)</span></div>
+    <p class="timing-note" id="timingNote">The service begins at 10:00am. The live audio stream opens at 11:00am, in time for the message.</p>
+    <p style="margin-top:.7rem">Audio only &mdash; it uses far less data than video.
+      Missed it? Past messages are on our <a href="/sermons">Sermons page</a>.
+      To get the link on WhatsApp each Sunday, <a href="/connect">message us</a> to be added.</p>
   </div>
 
 </div>
@@ -153,9 +162,34 @@
    ── TO CHANGE THE SERVICE TIME, EDIT THESE THREE NUMBERS ──────────
 ═══════════════════════════════════════════════════════════════════ */
 var STREAM_URL   = "https://smartkit.cc/healingmoment-live";
-var START_HOUR   = 10:30;   // 10:30:00am Kampala — stream goes live
-var END_HOUR     = 13:30;   // 1:30pm  Kampala — stream ends
-var OPEN_EARLY   = 30;   // minutes before START_HOUR that the button unlocks
+
+/*  Set the times here. Use SEPARATE numbers for hour and minute —
+    never write 10:30, a colon is not valid here and would break the page.
+    Hours use the 24-hour clock: 13 = 1pm, 18 = 6pm.
+      10:30am  ->  START_HOUR = 10,  START_MIN = 30
+      11:00am  ->  START_HOUR = 11,  START_MIN = 0
+       1:00pm  ->  END_HOUR   = 13,  END_MIN   = 0            */
+var START_HOUR   = 11;
+var START_MIN    = 0;    // stream goes live at 11:00am Kampala (what members see)
+var END_HOUR     = 13;
+var END_MIN      = 0;    // stream ends at 1:00pm Kampala
+var OPEN_EARLY   = 5;    // small grace period so early arrivals are not locked out
+
+/*  Setting up before the service?
+    Do NOT lower the times above just to test — that changes what every
+    member sees. Instead open the page with ?preview=live on the end:
+        healingmomentchurch.org/live?preview=live
+    That shows you the active button (and a gold PREVIEW banner) at any
+    time of day, while everyone else still sees the 11:00am countdown.   */
+
+/* Builds a readable label like "10:30am" from the numbers above. */
+function timeLabel(h, m){
+  var suffix = h < 12 ? "am" : "pm";
+  var hr = h % 12; if (hr === 0) hr = 12;
+  return hr + ":" + (m < 10 ? "0" : "") + m + suffix;
+}
+var START_LABEL = timeLabel(START_HOUR, START_MIN);
+var END_LABEL   = timeLabel(END_HOUR, END_MIN);
 
 /* Kampala time = UTC + 3, no daylight saving. */
 function kampalaNow(){
@@ -167,19 +201,62 @@ function nextSunday(k){
   var d = new Date(k.getTime());
   var days = (7 - d.getDay()) % 7;          // 0 = Sunday
   d.setDate(d.getDate() + days);
-  d.setHours(START_HOUR, 0, 0, 0);
+  d.setHours(START_HOUR, START_MIN, 0, 0);
   if (d.getTime() <= k.getTime()) d.setDate(d.getDate() + 7);
   return d;
 }
 
 function plural(n, w){ return n + " " + w + (n === 1 ? "" : "s"); }
 
+/* ── PREVIEW MODE (for testing before Sunday) ────────────────────
+   Add ?preview=live, ?preview=soon or ?preview=ended to the page URL
+   to force a state without waiting for Sunday. Example:
+     healingmomentchurch.org/live?preview=live
+   You can also pretend it is a specific moment:
+     ?fake=2026-08-23T11:30      (Kampala time, 24-hour clock)
+   Normal visitors never see any of this — with no ?preview or ?fake
+   in the URL the page behaves entirely on the real clock.
+──────────────────────────────────────────────────────────────────── */
+function previewMode(){
+  var m = location.search.match(/[?&]preview=(live|soon|ended)/);
+  return m ? m[1] : null;
+}
+function fakeKampala(){
+  var m = location.search.match(/[?&]fake=([0-9T:\-]+)/);
+  if(!m) return null;
+  var d = new Date(m[1] + ':00+03:00');
+  return isNaN(d.getTime()) ? null : new Date(d.getTime() + (d.getTimezoneOffset() + 180) * 60000);
+}
+function showPreviewBanner(state){
+  if(document.getElementById('previewBanner')) return;
+  var el = document.createElement('div');
+  el.id = 'previewBanner';
+  el.style.cssText = 'background:#c9a84c;color:#0f1b4c;font-family:Poppins,sans-serif;'
+    + 'font-size:12px;font-weight:700;text-align:center;padding:9px 12px;line-height:1.5';
+  el.textContent = 'PREVIEW MODE (' + state + ') — only you see this. '
+    + 'Remove the ?preview or ?fake from the address to see the real page.';
+  document.body.insertBefore(el, document.body.firstChild);
+}
+
 function render(){
-  var k        = kampalaNow();
-  var isSunday = k.getDay() === 0;
+  var pv = previewMode();
+  var k  = fakeKampala() || kampalaNow();
+
+  if (pv || fakeKampala()) showPreviewBanner(pv || 'simulated time');
+
+  if (pv) {                       // force a state, ignoring the clock
+    k = new Date(k.getTime());
+    var day = k.getDay();
+    k.setDate(k.getDate() + ((7 - day) % 7));            // move to a Sunday
+    if (pv === 'live')  k.setHours(START_HOUR, START_MIN + 5, 0, 0);
+    if (pv === 'ended') k.setHours(END_HOUR + 1, 0, 0, 0);
+    if (pv === 'soon')  { k.setDate(k.getDate() + (day === 0 ? 2 : 0)); k.setHours(9, 0, 0, 0); }
+  }
+
+  var isSunday = pv === 'soon' ? false : k.getDay() === 0;
   var mins     = k.getHours() * 60 + k.getMinutes();
-  var openFrom = START_HOUR * 60 - OPEN_EARLY;
-  var closeAt  = END_HOUR * 60;
+  var openFrom = START_HOUR * 60 + START_MIN - OPEN_EARLY;
+  var closeAt  = END_HOUR * 60 + END_MIN;
 
   var pill     = document.getElementById('pill');
   var pillText = document.getElementById('pill-text');
@@ -210,14 +287,14 @@ function render(){
     pill.className = 'status-pill off';
     pillText.textContent = 'Ended';
     headline.textContent = "Today's stream has ended";
-    lead.textContent = 'Thank you for joining us. The recording will be available on our Sermons page.';
+    lead.textContent = 'Thank you for joining us.';
     cd.style.display = 'none';
     btn.className = 'join-btn waiting';
     btn.removeAttribute('target');
     btn.href = '/sermons';
     btn.className = 'join-btn';
     btn.textContent = 'Listen to past messages →';
-    sub.textContent = 'We go live again next Sunday at ' + START_HOUR + ':00am.';
+    sub.textContent = 'We go live again next Sunday at ' + START_LABEL + '.';
     return;
   }
 
@@ -231,17 +308,26 @@ function render(){
   pill.className = 'status-pill off';
   pillText.textContent = 'Offline';
   headline.textContent = 'The stream is not live yet';
-  lead.textContent = 'Our live audio stream opens every Sunday morning. '
-    + 'Bookmark this page — the button below unlocks automatically when we go on air.';
+  lead.textContent = 'The button below unlocks automatically at ' + START_LABEL + ' on Sunday.';
   cd.style.display = 'block';
   cd.textContent = 'Live in ' + (d > 0 ? plural(d, 'day') + ', ' : '')
                  + plural(h, 'hour') + ' and ' + plural(m, 'minute');
   btn.className = 'join-btn waiting';
   btn.removeAttribute('href');
   btn.removeAttribute('target');
-  btn.textContent = 'Link opens Sunday at ' + START_HOUR + ':00am';
-  sub.textContent = 'No need to check back — just open this page on Sunday and the button will be ready.';
+  btn.textContent = 'Link opens Sunday at ' + START_LABEL;
+  sub.textContent = 'Bookmark this page — the link is always here.';
 }
+
+/* Keep the printed schedule in step with the numbers above, so changing
+   the time in one place updates the whole page. */
+(function(){
+  var t = document.getElementById('streamTimes');
+  if (t) t.textContent = 'Sundays, ' + START_LABEL + ' \u2013 ' + END_LABEL + ' (EAT)';
+  var n = document.getElementById('timingNote');
+  if (n) n.textContent = 'The service begins at 10:00am. The live audio stream opens an hour later, at '
+        + START_LABEL + ', in time for the message.';
+})();
 
 render();
 setInterval(render, 30000);   // keep the countdown ticking
