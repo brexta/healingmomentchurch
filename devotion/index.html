@@ -1,94 +1,464 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Healing Moment Devotion — Saturday, 19th September 2026</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-:root{--navy:#0f1b4c;--gold:#c9a84c;--light-gold:#f0d080;--cream:#faf8f2;--mid:#1a2d6b;--text-dark:#1a1a2e;--text-muted:#6b7280}
-body{font-family:'Roboto',sans-serif;background:#0a1535;color:var(--text-dark);padding:1.5rem 1rem 3rem}
-.card{max-width:640px;margin:0 auto;background:var(--cream);border-radius:14px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.35)}
-.header{background:linear-gradient(135deg,var(--navy) 0%,var(--mid) 60%,#1a3a8a 100%);padding:2.2rem 1.75rem 1.75rem;text-align:center;position:relative;overflow:hidden}
-.header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(201,168,76,.15) 0%,transparent 70%)}
-.seal{width:62px;height:62px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto .7rem;font-size:26px;border:3px solid rgba(255,255,255,.2);position:relative;z-index:1}
-.brand{color:var(--gold);font-family:'Poppins',sans-serif;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:.5rem;position:relative;z-index:1}
-.date{color:#dbe4f7;font-size:13px;margin-bottom:1rem;position:relative;z-index:1}
-.series{display:inline-block;background:rgba(201,168,76,.18);border:1px solid rgba(201,168,76,.4);border-radius:20px;padding:5px 14px;color:var(--gold);font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.9rem;position:relative;z-index:1}
-h1{font-family:'Poppins',sans-serif;color:#fff;font-size:1.5rem;line-height:1.3;position:relative;z-index:1}
-.author{color:#b8c8e8;font-size:12px;margin-top:.6rem;position:relative;z-index:1}
-.verse-block{background:var(--navy);padding:1.5rem 1.75rem;border-bottom:3px solid var(--gold)}
-.verse-block p{font-family:'Poppins',sans-serif;font-style:italic;color:#f0d080;font-size:1rem;line-height:1.6;text-align:center}
-.verse-block span{display:block;color:var(--gold);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;text-align:center;margin-top:.7rem;font-style:normal}
-.body{padding:1.75rem}
-.body p{font-size:14.5px;line-height:1.85;color:var(--text-dark);margin-bottom:1rem}
-.body p:last-of-type{margin-bottom:0}
-.section-label{font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:700;margin:1.5rem 0 .5rem}
-.gold-line{width:36px;height:3px;background:var(--gold);margin-bottom:1rem}
-.insight-box{background:#fff;border-left:3px solid var(--gold);border-radius:8px;padding:1.1rem 1.25rem;margin:.5rem 0 0}
-.insight-box p{font-size:13.5px;color:var(--text-dark);line-height:1.75;margin:0}
-.reading-plan{background:#f3f0e8;border-radius:8px;padding:1rem 1.25rem}
-.reading-plan p{font-size:13px;color:var(--text-muted);margin:0}
-.prayer-box{background:var(--navy);border-radius:10px;padding:1.25rem 1.4rem}
-.prayer-box p{font-size:13.5px;color:#dbe4f7;line-height:1.8;margin:0;font-style:italic}
-.footer{padding:1.5rem 1.75rem 1.75rem;text-align:center;border-top:1px solid #e5e7eb}
-.footer .tags{font-size:11.5px;color:var(--gold);font-weight:700;letter-spacing:.3px;line-height:1.9}
-.footer .service{font-size:11.5px;color:var(--text-muted);margin-top:.5rem}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Today's devotion: The Purpose of God's Forgiveness — The Healing Moment Church.">
+  <title>Daily Devotion — The Healing Moment Church</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+  /* ── Reset & Base ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy:   #0f1b4c;
+    --blue:   #1a3a8a;
+    --gold:   #c9a84c;
+    --lgold:  #f0d080;
+    --cyan:   #00e5ff;
+    --white:  #ffffff;
+    --muted:  #b8c8e8;
+    --card:   rgba(255,255,255,.05);
+    --border: rgba(201,168,76,.22);
+    --text:   #d4e0f0;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    background: var(--navy);
+    color: var(--text);
+    min-height: 100vh;
+    padding-bottom: 72px;
+  }
+
+  /* ── Typography ── */
+  h1,h2,h3,h4,h5 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--white);
+  }
+  .gold { color: var(--gold); }
+  .cyan { color: var(--cyan); }
+  .muted { color: var(--muted); font-size: .85rem; }
+
+  /* ── Desktop Nav ── */
+  .desktop-nav {
+    position: sticky; top: 0; z-index: 300;
+    background: rgba(15,27,76,.97);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 1.5rem;
+    display: none;
+  }
+  @media(min-width:769px){ .desktop-nav { display: block; } }
+  .desktop-nav .inner {
+    display: flex; align-items: center; justify-content: space-between;
+    max-width: 1100px; margin: 0 auto; height: 58px;
+  }
+  .desktop-nav .brand {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700; font-size: .95rem;
+    color: var(--gold); white-space: nowrap;
+  }
+  .desktop-nav .links { display: flex; align-items: center; gap: 1.6rem; }
+  .desktop-nav .links a {
+    color: var(--muted); text-decoration: none;
+    font-size: .8rem; font-weight: 500; letter-spacing: .5px;
+    transition: color .2s; white-space: nowrap;
+  }
+  .desktop-nav .links a:hover { color: var(--gold); }
+  .desktop-nav .links a.give-btn {
+    color: var(--gold); border: 1px solid var(--gold);
+    padding: 5px 14px; border-radius: 20px;
+  }
+  .desktop-nav .links a.give-btn:hover { background: var(--gold); color: var(--navy); }
+
+  /* ── Bottom Nav ── */
+  .bottom-nav {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: rgba(10,18,50,.97);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--border);
+    display: flex; align-items: stretch; justify-content: space-around;
+    height: 60px; z-index: 500;
+  }
+  .bnav-btn {
+    background: none; border: none; color: var(--muted);
+    cursor: pointer; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 2px; padding: 4px 6px; flex: 1;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none; transition: color .15s;
+  }
+  .bnav-btn:hover, .bnav-btn.active { color: var(--gold); }
+  .bnav-icon { font-size: 17px; line-height: 1; }
+  .bnav-label { font-size: 9px; font-weight: 500; letter-spacing: .3px; white-space: nowrap; }
+
+  /* ── More Menu ── */
+  .more-menu {
+    display: none; position: fixed; bottom: 60px; left: 0; right: 0;
+    background: rgba(10,18,50,.98); backdrop-filter: blur(12px);
+    z-index: 400; border-top: 1px solid var(--border);
+    padding: .75rem 1rem;
+  }
+  .more-menu .grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 8px; max-width: 400px; margin: 0 auto;
+  }
+  .more-menu a {
+    background: rgba(255,255,255,.06); border-radius: 8px;
+    padding: 10px; text-decoration: none; color: var(--white);
+    font-size: 13px; text-align: center; display: block;
+    transition: background .15s;
+  }
+  .more-menu a:hover { background: rgba(255,255,255,.12); }
+  .more-menu a.archive-link {
+    grid-column: span 2;
+    background: rgba(201,168,76,.12);
+    color: var(--gold);
+    border: 1px solid rgba(201,168,76,.3);
+  }
+
+  /* ── Page Wrapper ── */
+  .page { display: block !important; }
+  .section { padding: 1.25rem 1rem 2rem; max-width: 680px; margin: 0 auto; }
+  .section-title {
+    font-family: 'Poppins', sans-serif; font-weight: 800;
+    font-size: 1.5rem; color: var(--white); margin-bottom: .3rem;
+  }
+  .gold-line {
+    height: 3px; width: 50px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    border-radius: 2px; margin-bottom: 1.25rem;
+  }
+
+  /* ── Cards ── */
+  .card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1rem 1.1rem; margin-bottom: .9rem;
+  }
+
+  /* ── Archive specific ── */
+  .arc-month-banner {
+    background: linear-gradient(135deg, var(--blue), #1a3a8a);
+    border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem;
+    border: 1px solid var(--gold); text-align: center;
+  }
+  .arc-month-banner h2 {
+    font-size: 1.4rem; color: var(--gold); margin-bottom: .3rem;
+  }
+  .arc-month-banner p { color: var(--muted); font-size: .85rem; line-height: 1.6; }
+
+  .arc-week-label {
+    font-family: 'Poppins', sans-serif; font-weight: 700;
+    font-size: .7rem; color: var(--gold);
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: .3rem 0 .5rem;
+    border-bottom: 1px solid var(--border);
+    margin: 1.25rem 0 .75rem;
+  }
+
+  .arc-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; margin-bottom: .65rem; overflow: hidden;
+    transition: border-color .2s;
+  }
+  .arc-card:hover { border-color: rgba(201,168,76,.45); }
+
+  .arc-header {
+    padding: .85rem 1rem; cursor: pointer;
+    display: grid; grid-template-columns: 1fr auto;
+    align-items: center; gap: .5rem;
+  }
+  .arc-meta {
+    font-size: .72rem; color: var(--muted);
+    margin-bottom: .2rem; display: flex; gap: .6rem; flex-wrap: wrap;
+  }
+  .arc-ref { color: var(--gold); font-weight: 500; }
+  .arc-title {
+    font-family: 'Poppins', sans-serif; font-weight: 600;
+    font-size: .95rem; color: var(--white); line-height: 1.35;
+  }
+  .arc-chevron { color: var(--gold); font-size: .8rem; transition: transform .2s; }
+  .arc-chevron.open { transform: rotate(180deg); }
+
+  .arc-body { padding: 0 1rem 1rem; border-top: 1px solid var(--border); }
+
+  .arc-verse-box {
+    background: rgba(201,168,76,.08); border-radius: 8px;
+    padding: .85rem; margin: .85rem 0;
+    border-left: 3px solid var(--gold);
+  }
+  .arc-verse-text {
+    font-style: italic; font-size: .9rem; color: var(--white);
+    line-height: 1.75; margin-bottom: .35rem;
+  }
+  .arc-verse-ref {
+    font-family: 'Poppins', sans-serif; font-weight: 600;
+    font-size: .7rem; color: var(--gold); letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .arc-content {
+    font-size: .88rem; color: var(--text);
+    line-height: 1.8; margin-bottom: .85rem;
+  }
+
+  .arc-insight {
+    background: rgba(201,168,76,.08); border-radius: 8px;
+    padding: .85rem; margin-bottom: .85rem;
+    border: 1px solid rgba(201,168,76,.2);
+  }
+  .arc-insight-label {
+    font-family: 'Poppins', sans-serif; font-weight: 700;
+    font-size: .65rem; color: var(--gold);
+    letter-spacing: 2px; text-transform: uppercase; margin-bottom: .4rem;
+  }
+  .arc-insight-text {
+    font-style: italic; font-size: .88rem;
+    color: var(--white); line-height: 1.7;
+  }
+
+  .arc-plan {
+    display: grid; grid-template-columns: 1fr 1fr; gap: .75rem;
+    background: rgba(255,255,255,.04); border-radius: 8px;
+    padding: .75rem; margin-bottom: .85rem;
+    font-size: .83rem; color: var(--muted);
+  }
+  .arc-plan-label {
+    font-family: 'Poppins', sans-serif; font-weight: 600;
+    font-size: .65rem; color: var(--cyan);
+    letter-spacing: 1.5px; text-transform: uppercase;
+    display: block; margin-bottom: .3rem;
+  }
+
+  .arc-prayer {
+    background: rgba(0,229,255,.06); border-radius: 8px;
+    padding: .85rem; border-left: 3px solid var(--cyan);
+  }
+  .arc-prayer-label {
+    font-family: 'Poppins', sans-serif; font-weight: 700;
+    font-size: .65rem; color: var(--cyan);
+    letter-spacing: 2px; text-transform: uppercase;
+    display: block; margin-bottom: .5rem;
+  }
+  .arc-prayer p {
+    font-style: italic; font-size: .88rem;
+    color: var(--text); line-height: 1.75;
+  }
+
+  /* ── Devotion Page specific ── */
+  .dev-date {
+    font-size: .75rem; color: var(--muted);
+    margin-bottom: .5rem; font-weight: 300;
+  }
+  .dev-topic {
+    font-family: 'Poppins', sans-serif; font-weight: 800;
+    font-size: 1.55rem; color: var(--white);
+    line-height: 1.2; margin-bottom: 1rem;
+  }
+  .dev-verse-wrap {
+    background: rgba(201,168,76,.08); border-radius: 10px;
+    padding: 1rem; margin-bottom: 1rem;
+    border-left: 3px solid var(--gold);
+  }
+  .dev-verse {
+    font-style: italic; font-size: .95rem; color: var(--white);
+    line-height: 1.8; margin-bottom: .4rem;
+  }
+  .dev-ref {
+    font-family: 'Poppins', sans-serif; font-weight: 700;
+    font-size: .7rem; color: var(--gold);
+    letter-spacing: 1px; text-transform: uppercase;
+  }
+  .dev-body {
+    font-size: .93rem; color: var(--text);
+    line-height: 1.85; margin-bottom: 1.25rem;
+  }
+  .dev-insight {
+    background: rgba(201,168,76,.09); border-radius: 10px;
+    padding: 1rem; margin-bottom: 1rem;
+    border: 1px solid rgba(201,168,76,.25);
+  }
+  .dev-insight-label {
+    font-family: 'Poppins', sans-serif; font-weight: 700;
+    font-size: .65rem; color: var(--gold);
+    letter-spacing: 2px; text-transform: uppercase; margin-bottom: .5rem;
+  }
+  .dev-insight-text {
+    font-style: italic; font-size: .92rem;
+    color: var(--white); line-height: 1.7;
+  }
+  .dev-plan-wrap {
+    display: grid; grid-template-columns: 1fr 1fr; gap: .75rem;
+    background: rgba(255,255,255,.04); border-radius: 8px;
+    padding: .85rem; margin-bottom: 1rem;
+    font-size: .85rem; color: var(--muted);
+  }
+  .dev-plan-label {
+    font-family: 'Poppins', sans-serif; font-weight: 600;
+    font-size: .65rem; color: var(--cyan);
+    letter-spacing: 1.5px; text-transform: uppercase;
+    display: block; margin-bottom: .3rem;
+  }
+  .dev-prayer {
+    background: rgba(0,229,255,.06); border-radius: 10px;
+    padding: 1rem; border-left: 3px solid var(--cyan);
+    margin-bottom: 1.25rem;
+  }
+  .dev-prayer-label {
+    font-family: 'Poppins', sans-serif; font-weight: 700;
+    font-size: .65rem; color: var(--cyan);
+    letter-spacing: 2px; text-transform: uppercase;
+    display: block; margin-bottom: .5rem;
+  }
+  .dev-prayer p {
+    font-style: italic; font-size: .92rem;
+    color: var(--text); line-height: 1.75;
+  }
+  .dev-archive-link {
+    text-align: center; padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .dev-archive-link a {
+    display: inline-block;
+    background: rgba(201,168,76,.12); color: var(--gold);
+    font-family: 'Poppins', sans-serif; font-weight: 600;
+    font-size: .85rem; padding: 10px 24px;
+    border-radius: 24px; text-decoration: none;
+    border: 1px solid rgba(201,168,76,.35);
+    transition: background .2s;
+  }
+  .dev-archive-link a:hover { background: rgba(201,168,76,.25); }
+  .dev-archive-link p { font-size: .75rem; color: var(--muted); margin-bottom: .6rem; }
+
+  /* ── Readability: softer text on dark background ── */
+  :root {
+    --text-body:  #c8d8ee;
+    --text-head:  #eef2ff;
+    --text-verse: #e8eeff;
+    --text-muted: #9aacc8;
+  }
+  body { color: var(--text-body) !important; }
+
+  /* Headings */
+  h1,h2,h3,h4,h5,
+  .section-title, .hero-title, .hero-tagline,
+  .dev-topic, .book-title, .event-title,
+  .leader-name, .vision-title, .model-name,
+  .arc-title { color: var(--text-head) !important; }
+
+  /* Body / paragraph text */
+  p, .dev-body, .arc-content,
+  .book-desc, .event-desc, .leader-role,
+  .connect-val, .give-desc, .community-text { color: var(--text-body) !important; }
+
+  /* Italic / verse / insight */
+  .dev-verse, .arc-verse-text, .dev-insight-text,
+  .arc-insight-text, .arc-prayer p, .dev-prayer p,
+  blockquote, i, em { color: var(--text-verse) !important; }
+
+  /* Muted / small text */
+  .dev-date, .arc-meta, .arc-date, .book-author,
+  .event-tag, .arc-plan, .muted,
+  .dev-plan-wrap { color: var(--text-muted) !important; }
+
+  /* Keep gold and cyan as-is */
+  .gold, .dev-ref, .arc-ref, .arc-verse-ref,
+  [style*="color:var(--gold)"],
+  [style*="color:#c9a84c"] { color: #c9a84c !important; }
+
+</style>
+  <style>
+  :root{--text-body:#c8d8ee;--text-head:#eef2ff;--text-verse:#e8eeff;--text-muted:#9aacc8}
+  body{padding-bottom:72px;color:#c8d8ee}
+  .page{display:block!important}
+  .bnav-btn.active{color:var(--gold)!important}
+  .dev-topic{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.45rem;color:#eef2ff;line-height:1.25;margin-bottom:.9rem}
+  .dev-date{font-family:'Roboto',sans-serif;font-weight:300;font-size:.78rem;color:#9aacc8;margin-bottom:.5rem}
+  .dev-verse-wrap{background:rgba(201,168,76,.09);border-radius:10px;padding:1rem 1.1rem;margin-bottom:1.1rem;border-left:3px solid #c9a84c}
+  .dev-verse{font-family:'Roboto',sans-serif!important;font-style:italic;font-size:.94rem;color:#e8eeff;line-height:1.82;margin-bottom:.4rem;text-align:justify}
+  .dev-ref{font-family:'Poppins',sans-serif;font-weight:700;font-size:.68rem;color:#c9a84c;letter-spacing:1px;text-transform:uppercase}
+  .dev-body{font-family:'Roboto',sans-serif;font-size:.93rem;color:#c8d8ee;line-height:1.88;margin-bottom:1.2rem;text-align:justify}
+  .dev-insight{background:rgba(201,168,76,.08);border-radius:10px;padding:1rem 1.1rem;margin-bottom:1rem;border:1px solid rgba(201,168,76,.22)}
+  .dev-insight-label{font-family:'Poppins',sans-serif;font-weight:700;font-size:.64rem;color:#c9a84c;letter-spacing:2px;text-transform:uppercase;margin-bottom:.5rem;display:block}
+  .dev-insight-text{font-family:'Roboto',sans-serif;font-style:italic;font-size:.91rem;color:#e8eeff;line-height:1.72;text-align:justify}
+  .dev-plan-wrap{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;background:rgba(255,255,255,.04);border-radius:8px;padding:.85rem;margin-bottom:1rem;font-family:'Roboto',sans-serif;font-size:.84rem;color:#9aacc8}
+  .dev-plan-label{font-family:'Poppins',sans-serif;font-weight:600;font-size:.63rem;color:#00e5ff;letter-spacing:1.5px;text-transform:uppercase;display:block;margin-bottom:.3rem}
+  .dev-prayer{background:rgba(0,229,255,.05);border-radius:10px;padding:1rem 1.1rem;border-left:3px solid #00e5ff;margin-bottom:1.2rem}
+  .dev-prayer-label{font-family:'Poppins',sans-serif;font-weight:700;font-size:.64rem;color:#00e5ff;letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:.5rem}
+  .dev-prayer p{font-family:'Roboto',sans-serif;font-style:italic;font-size:.91rem;color:#c8d8ee;line-height:1.78;margin:0;text-align:justify}
+  .dev-archive-link{text-align:center;padding-top:1rem;border-top:1px solid rgba(201,168,76,.18)}
+  .dev-archive-link p{font-size:.75rem;color:#9aacc8;margin-bottom:.6rem;font-family:'Roboto',sans-serif}
+  .dev-archive-link a{display:inline-block;background:rgba(201,168,76,.11);color:#c9a84c;font-family:'Poppins',sans-serif;font-weight:600;font-size:.84rem;padding:10px 24px;border-radius:24px;text-decoration:none;border:1px solid rgba(201,168,76,.32)}
 </style>
 </head>
 <body>
-<div class="card">
-
-  <div class="header">
-    <div class="seal">&#10024;</div>
-    <div class="brand">Healing Moment Devotion</div>
-    <div class="date">Saturday, 19th September, 2026</div>
-    <div class="series">Healing Series</div>
-    <h1>Healed So That You Serve God</h1>
-    <div class="author">Apostle Julius P. Isabirye</div>
+<nav class="desktop-nav">
+  <div class="inner">
+    <span class="brand">The Healing Moment Church</span>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/live">🔴 Live</a>
+      <a href="/sermons">Sermons</a>
+      <a href="/devotion">Devotion</a>
+      <a href="/archive">Archive</a>
+      <a href="/events">Events</a>
+      <a href="/books">Books</a>
+      <a href="/connect">Connect</a>
+      <a href="/give" class="give-btn">Give</a>
+    </div>
   </div>
-
-  <div class="verse-block">
-    <p>"So He touched her hand, and the fever left her. Then she got up and began to serve Him."</p>
-    <span>Matthew 8:15 (HCSB)</span>
+</nav>
+<div class="page">
+<div class="section">
+  <div class="dev-date">Monday, 21st September, 2026 · Apostle Julius P. Isabirye</div>
+  <div class="dev-topic">The Purpose of God's Forgiveness</div>
+  <div class="dev-verse-wrap">
+    <div class="dev-verse">God is faithful and reliable. If we confess our sins, he forgives them and cleanses us from everything we've done wrong.</div>
+    <div class="dev-ref">1 John 1:9 (GW)</div>
   </div>
-
-  <div class="body">
-    <p>A young girl was brought to a preacher for healing. The preacher asked her why she wanted to be healed, and she answered, "I am a ballet dancer, and I want God to heal me so that I can return to dancing again."</p>
-
-    <p>God is merciful and loving. He is concerned about all our needs, and that is why He wants our bodies healed. Divine healing is an expression of His love and kindness towards us. God heals us because He is touched by our pains and sorrows.</p>
-
-    <p>However, we should note that God's greater purpose is for us to use our strength to serve Him. God heals us so that we are healthy and strong enough to carry out His will and purpose in this world. We are meant to use our strength to serve Him.</p>
-
-    <p>Peter's mother-in-law demonstrated this wisdom, and God uses her example to show us the right pattern. Once she got healed, she immediately rose up and started serving the Lord. These are the kind of people whom God heals and never wants to see sick again &mdash; people who desire health not for selfish reasons but to be able to serve God's purposes effectively.</p>
-
-    <p>So, why do you want to be healed? Is your reason spiritual or carnal? Seek healing with God's purposes in mind. Use your health and strength for His service. Glory to Jesus!</p>
-
-    <div class="section-label">Meditation</div>
-    <div class="gold-line"></div>
-    <div class="insight-box"><p>Matthew 8:15</p></div>
-
-    <div class="section-label">Healing Insight</div>
-    <div class="gold-line"></div>
-    <div class="insight-box"><p>God heals us so that we are healthy and strong enough to carry out His will and purpose in this world. We are meant to use our strength to serve Him.</p></div>
-
-    <div class="section-label">One Year Bible Reading Plan</div>
-    <div class="gold-line"></div>
-    <div class="reading-plan"><p>Ecclesiastes 1&ndash;3; 2 Corinthians 11:16&ndash;33</p></div>
-
-    <div class="section-label">Prayer</div>
-    <div class="gold-line"></div>
-    <div class="prayer-box"><p>I declare healing for you today. In the Name of Jesus Christ of Nazareth, I command every disease to lose its power over you now. Like Peter's mother-in-law, rise and be healed so that you can serve God's purposes in Jesus' Mighty Name!</p></div>
+  <div class="dev-body">Behind everything God does, there are hidden instructions. All His activities are meant to instruct and teach us His ways.<br><br>Why does God forgive? What are the lessons He wants us to learn as we study and receive His forgiveness?<br><br>The first reason why God forgives, is to provide us with a platform for forgiving ourselves. When you receive God's forgiveness, it should provide you with the peace of heart and mind you need to move on. It is also meant to supply you with the courage you need to forgive yourself.<br><br>This is very important because some people say they believe God forgave them, yet they still stay bound by guilt because of not forgiving themselves. They say, &ldquo;I know God forgave me, but I just can't forgive myself.&rdquo;<br><br>Well, that is not right. If you truly know and believe that God has forgiven you, then you should also be able to forgive yourself. Forgiving yourself is part of walking in God's forgiveness for you.<br><br>Since God no longer holds you guilty of your sin, there is no reason for you to keep holding yourself guilty of it. Learn to embrace the full freedom that comes from God's mercy towards you by forgiving yourself for the things God has already forgiven you.<br><br>After God has forgiven you, there is no more reason for you to hold yourself in guilt about your past sins. Those who truly believe that God has forgiven them and cleansed them from all unrighteousness, must also easily forgive themselves. This is the reason why God forgives you. Glory to Jesus!</div>
+  <div class="dev-insight">
+    <div class="dev-insight-label">&#10024; Healing Insight</div>
+    <div class="dev-insight-text">After God has forgiven you, there is no more reason for you to hold yourself in guilt about your past sins. Those who truly believe that God has forgiven them and cleansed them from all unrighteousness, must also easily forgive themselves.</div>
   </div>
-
-  <div class="footer">
-    <div class="tags">#HealingMomentChurch &nbsp;&middot;&nbsp; #WhereDestiniesEmerge</div>
-    <div class="service">Join us Every Sunday 10am &middot; Stallion Hotel, Busega</div>
+  <div class="dev-plan-wrap">
+    <div><span class="dev-plan-label">Reading Plan</span>Ecclesiastes 7&ndash;9 &middot; 2 Corinthians 13</div>
+    <div><span class="dev-plan-label">Meditation</span>1 John 1:9</div>
   </div>
-
+  <div class="dev-prayer">
+    <span class="dev-prayer-label">Prayer</span>
+    <p>Heavenly Father, I thank You for Your great love and kindness towards me. I believe that I am truly forgiven of all my sins and all my guilt is taken away. I therefore stand boldly in faith and forgive myself too. I refuse to hold myself in guilt about things You already forgave me about. I declare that I am forgiven and free, in Jesus Mighty Name!</p>
+  </div>
+  <div class="dev-archive-link">
+    <p>Missed a previous devotion?</p>
+    <a href="/archive">View Past Devotions</a>
+  </div>
 </div>
+</div>
+
+<script>
+function toggleMore(){
+  var m=document.getElementById('more-menu');
+  m.style.display=m.style.display==='block'?'none':'block';
+}
+document.addEventListener('click',function(e){
+  var m=document.getElementById('more-menu');
+  var b=document.getElementById('bnav-more');
+  if(m&&m.style.display==='block'&&!m.contains(e.target)&&b&&!b.contains(e.target))
+    m.style.display='none';
+});
+(function(){
+  var p=window.location.pathname.replace(/\/+$/,'')||'/';
+  document.querySelectorAll('.bnav-btn[href],.desktop-nav a').forEach(function(el){
+    var h=(el.getAttribute('href')||'').replace(/\/+$/,'')||'/';
+    if(h===p)el.classList.add('active');
+  });
+})();
+</script>
 </body>
 </html>
