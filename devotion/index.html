@@ -3,46 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Today's daily devotion from The Healing Moment Church — Pray As A Righteous One by Apostle Julius P. Isabirye.">
+  <meta name="description" content="Today's daily devotion from The Healing Moment Church — Empowered to Lead by Apostle Julius P. Isabirye.">
   <title>Today's Devotion — The Healing Moment Church</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
   <style>
-  /* ── Reset & Base ── */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
     --navy:   #0f1b4c;
     --blue:   #1a3a8a;
     --gold:   #c9a84c;
-    --lgold:  #f0d080;
     --cyan:   #00e5ff;
     --white:  #ffffff;
     --muted:  #b8c8e8;
     --card:   rgba(255,255,255,.05);
     --border: rgba(201,168,76,.22);
     --text:   #d4e0f0;
+    --text-body:  #c8d8ee;
+    --text-head:  #eef2ff;
+    --text-verse: #e8eeff;
+    --text-muted: #9aacc8;
   }
   html { scroll-behavior: smooth; }
   body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     background: var(--navy);
-    color: var(--text);
+    color: var(--text-body);
     min-height: 100vh;
     padding-bottom: 72px;
   }
-
-  /* ── Typography ── */
   h1,h2,h3,h4,h5 {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     line-height: 1.2;
-    color: var(--white);
+    color: var(--text-head);
   }
-  .gold { color: var(--gold); }
-  .cyan { color: var(--cyan); }
-  .muted { color: var(--muted); font-size: .85rem; }
 
   /* ── Desktop Nav ── */
   .desktop-nav {
@@ -125,24 +122,15 @@
   /* ── Page Wrapper ── */
   .page { display: block !important; }
   .section { padding: 1.25rem 1rem 2rem; max-width: 680px; margin: 0 auto; }
-  .section-title {
-    font-family: 'Poppins', sans-serif; font-weight: 800;
-    font-size: 1.5rem; color: var(--white); margin-bottom: .3rem;
-  }
-  .gold-line {
-    height: 3px; width: 50px;
-    background: linear-gradient(90deg, var(--gold), transparent);
-    border-radius: 2px; margin-bottom: 1.25rem;
-  }
 
-  /* ── Devotion Page specific ── */
+  /* ── Devotion Page ── */
   .dev-date {
-    font-size: .75rem; color: var(--muted);
+    font-size: .75rem; color: var(--text-muted);
     margin-bottom: .5rem; font-weight: 300;
   }
   .dev-topic {
     font-family: 'Poppins', sans-serif; font-weight: 800;
-    font-size: 1.55rem; color: var(--white);
+    font-size: 1.55rem; color: var(--text-head);
     line-height: 1.2; margin-bottom: 1rem;
   }
   .dev-verse-wrap {
@@ -151,7 +139,7 @@
     border-left: 3px solid var(--gold);
   }
   .dev-verse {
-    font-style: italic; font-size: .95rem; color: var(--white);
+    font-style: italic; font-size: .95rem; color: var(--text-verse);
     line-height: 1.8; margin-bottom: .4rem;
     text-align: justify;
   }
@@ -161,7 +149,7 @@
     letter-spacing: 1px; text-transform: uppercase;
   }
   .dev-body {
-    font-size: .93rem; color: var(--text);
+    font-size: .93rem; color: var(--text-body);
     line-height: 1.85; margin-bottom: 1.25rem;
     text-align: justify;
   }
@@ -179,14 +167,14 @@
   }
   .dev-insight-text {
     font-style: italic; font-size: .92rem;
-    color: var(--white); line-height: 1.7;
+    color: var(--text-verse); line-height: 1.7;
     text-align: justify;
   }
   .dev-plan-wrap {
     display: grid; grid-template-columns: 1fr 1fr; gap: .75rem;
     background: rgba(255,255,255,.04); border-radius: 8px;
     padding: .85rem; margin-bottom: 1rem;
-    font-size: .85rem; color: var(--muted);
+    font-size: .85rem; color: var(--text-muted);
   }
   .dev-plan-label {
     font-family: 'Poppins', sans-serif; font-weight: 600;
@@ -207,14 +195,8 @@
   }
   .dev-prayer p {
     font-style: italic; font-size: .92rem;
-    color: var(--text); line-height: 1.75;
+    color: var(--text-verse); line-height: 1.75;
     text-align: justify;
-  }
-  .dev-yt { text-align: center; margin: 1.2rem 0 1.4rem; }
-  .dev-yt a {
-    display: inline-block; background: var(--gold); color: var(--navy);
-    font-family: 'Poppins', sans-serif; font-weight: 700;
-    font-size: .85rem; padding: 10px 24px; border-radius: 24px; text-decoration: none;
   }
   .dev-archive-link {
     text-align: center; padding-top: 1rem;
@@ -230,25 +212,7 @@
     transition: background .2s;
   }
   .dev-archive-link a:hover { background: rgba(201,168,76,.25); }
-  .dev-archive-link p { font-size: .75rem; color: var(--muted); margin-bottom: .6rem; }
-
-  /* ── Readability: softer text on dark background ── */
-  :root {
-    --text-body:  #c8d8ee;
-    --text-head:  #eef2ff;
-    --text-verse: #e8eeff;
-    --text-muted: #9aacc8;
-  }
-  body { color: var(--text-body) !important; }
-  h1,h2,h3,h4,h5,
-  .section-title, .dev-topic { color: var(--text-head) !important; }
-  p, .dev-body { color: var(--text-body) !important; }
-  .dev-verse, .dev-insight-text, .dev-prayer p,
-  blockquote, i, em { color: var(--text-verse) !important; }
-  .dev-date, .dev-plan-wrap, .muted { color: var(--text-muted) !important; }
-  .gold, .dev-ref,
-  [style*="color:var(--gold)"],
-  [style*="color:#c9a84c"] { color: #c9a84c !important; }
+  .dev-archive-link p { font-size: .75rem; color: var(--text-muted); margin-bottom: .6rem; }
   </style>
 </head>
 <body>
@@ -270,42 +234,43 @@
 <div class="page">
 <div class="section">
 
-  <div class="dev-date">Monday, 5th October, 2026 · Apostle Julius P. Isabirye</div>
-  <div class="dev-topic">Pray As A Righteous One</div>
+  <div class="dev-date">Tuesday, 6th October, 2026 · Apostle Julius P. Isabirye</div>
+  <div class="dev-topic">Empowered to Lead</div>
 
   <div class="dev-verse-wrap">
-    <div class="dev-verse">"...The effectual fervent prayer of a righteous man availeth much."</div>
-    <div class="dev-ref">James 5:16 (KJV)</div>
+    <div class="dev-verse">"But you shall receive power (ability, efficiency, and might) when the Holy Spirit has come upon you, and you shall be My witnesses in Jerusalem and all Judea and Samaria and to the ends (the very bounds) of the earth."</div>
+    <div class="dev-ref">Acts 1:8 (AMP)</div>
   </div>
 
   <div class="dev-body">
-    <p>The quality of your prayer life is determined by several factors. Two of those factors are faith and righteousness.</p>
-    <p>Righteousness is the ability to stand in the presence of God without any sense of guilt. It means being in right standing with God. It is the key to having peace with God (Romans 5:1).</p>
-    <p>Our opening scripture reveals that the prayer of the righteous is powerful. This reveals that there is a direct connection between righteousness and effective prayer.</p>
-    <p>Guilt makes faith difficult and causes you to approach God fearfully in prayer. It is a hindrance to praying fervently and effectively. But once you know that you are not guilty before God, you will easily believe in your own prayers and trust that God will answer you and give you all you ask.</p>
-    <p>Guilt and condemnation make you feel unqualified for God's hearing and answers in prayer. That is why God wants you to pray as a righteous one whose sins have all been forgiven and washed away through faith in Jesus Christ.</p>
-    <p>Righteousness is a platform for you to have strong faith in prayer and pray effectively. It empowers you to be bold and confident that God is hearing you and will answer your prayer. So, always pray as a righteous one, in Jesus' Name.</p>
+    <p>Leadership is the ability to influence and impact lives positively through the accomplishment of a God-given vision and assignment.</p>
+    <p>Because leadership is about people, it is impossible to carry out effectively in your own strength. Our opening scripture reveals that it is through the Holy Spirit that we receive the ability and efficiency and might to become great leaders. The Holy Spirit is the key to becoming an effective and efficient leader.</p>
+    <p>Isaiah 11:2 reveals the several abilities the Holy Spirit imparts to you as a leader to make you able and effective. He imparts to you wisdom, knowledge, understanding, counsel, might, and the fear of the Lord. He also makes you of quick understanding and gives you the ability to accurately discern and judge between right and wrong.</p>
+    <p>Before David became King, God anointed him, "and the Spirit of the Lord came upon David from that day forward" (1 Samuel 16:13). He couldn't become King without the empowerment of the Holy Spirit.</p>
+    <p>In Acts 6, there was a food conflict, and the Apostles said, "choose for yourselves men of honest report full of the Holy Spirit and wisdom whom we can appoint over this business" (Acts 6:3). Scripture says, "…and they chose Stephen a man full of faith and of the Holy Spirit…." (v.5). Hallelujah!</p>
+    <p>These scriptures attest to the truth that even the lowest level of leadership cannot effectively be filled and carried out in human strength and wisdom. It takes the wisdom of God and the power of the Holy Spirit to become a leader and lead effectively at every level.</p>
+    <p>So, as a worship leader, pastor, mother, father, or employer, seek God for the empowerment of the Holy Spirit to help you become an effective leader. He will empower you with all the strength and wisdom you need. Glory to Jesus!</p>
   </div>
 
   <div class="dev-insight">
-    <div class="dev-insight-label">✦ Healing Insight</div>
-    <div class="dev-insight-text">Righteousness is a platform for you to have strong faith in prayer and pray effectively. It empowers you to be bold and confident that God is hearing you and will answer your prayer.</div>
+    <div class="dev-insight-label">✦ Leadership Insight</div>
+    <div class="dev-insight-text">The Holy Spirit is the key to becoming an effective and efficient leader.</div>
   </div>
 
   <div class="dev-plan-wrap">
     <div>
       <span class="dev-plan-label">📖 Bible Reading</span>
-      Isaiah 23–25 · Philippians 1
+      Isaiah 26–27 · Philippians 2
     </div>
     <div>
       <span class="dev-plan-label">🙏 Meditation</span>
-      James 5:16
+      Acts 1:8 · Isaiah 11:2
     </div>
   </div>
 
   <div class="dev-prayer">
     <span class="dev-prayer-label">✦ Prayer</span>
-    <p>Heavenly Father, I thank You for the forgiveness and right standing I have in Christ Jesus. Today, I reject every feeling of guilt, fear and doubt trying to hinder my prayers. I stand bold and pray fervently with a heart full of faith, knowing well that You my Father are hearing and ready to answer me, in Jesus' Mighty Name!</p>
+    <p>May the Holy Spirit fill you afresh today. May He fill you with the wisdom, counsel, might, understanding, and strength you need to lead your family, ministry, and business effectively, in Jesus' Mighty Name!</p>
   </div>
 
   <div class="dev-archive-link">
@@ -353,6 +318,5 @@ document.addEventListener('click',function(e){
   });
 })();
 </script>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1f11b9b7a1cd4e18b14cc33d4a9e5d25"}'></script>
 </body>
 </html>
