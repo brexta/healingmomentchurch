@@ -3,48 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Today's devotion: And The Word Was Made Flesh — The Healing Moment Church.">
-  <title>Daily Devotion — The Healing Moment Church</title>
+  <meta name="description" content="Today's daily devotion from The Healing Moment Church — The Sent Word of God by Apostle Julius P. Isabirye.">
+  <title>Today's Devotion — The Healing Moment Church</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
   <style>
-  /* ── Reset & Base ── */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
     --navy:   #0f1b4c;
-    --blue:   #1a3a8a;
     --gold:   #c9a84c;
-    --lgold:  #f0d080;
     --cyan:   #00e5ff;
     --white:  #ffffff;
     --muted:  #b8c8e8;
-    --card:   rgba(255,255,255,.05);
     --border: rgba(201,168,76,.22);
-    --text:   #d4e0f0;
+    --text-body:  #c8d8ee;
+    --text-head:  #eef2ff;
+    --text-verse: #e8eeff;
+    --text-muted: #9aacc8;
   }
   html { scroll-behavior: smooth; }
   body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     background: var(--navy);
-    color: var(--text);
+    color: var(--text-body);
     min-height: 100vh;
     padding-bottom: 72px;
   }
-
-  /* ── Typography ── */
-  h1,h2,h3,h4,h5 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    line-height: 1.2;
-    color: var(--white);
-  }
-  .gold { color: var(--gold); }
-  .cyan { color: var(--cyan); }
-  .muted { color: var(--muted); font-size: .85rem; }
-
-  /* ── Desktop Nav ── */
   .desktop-nav {
     position: sticky; top: 0; z-index: 300;
     background: rgba(15,27,76,.97);
@@ -75,8 +61,6 @@
     padding: 5px 14px; border-radius: 20px;
   }
   .desktop-nav .links a.give-btn:hover { background: var(--gold); color: var(--navy); }
-
-  /* ── Bottom Nav ── */
   .bottom-nav {
     position: fixed; bottom: 0; left: 0; right: 0;
     background: rgba(10,18,50,.97);
@@ -96,8 +80,6 @@
   .bnav-btn:hover, .bnav-btn.active { color: var(--gold); }
   .bnav-icon { font-size: 17px; line-height: 1; }
   .bnav-label { font-size: 9px; font-weight: 500; letter-spacing: .3px; white-space: nowrap; }
-
-  /* ── More Menu ── */
   .more-menu {
     display: none; position: fixed; bottom: 60px; left: 0; right: 0;
     background: rgba(10,18,50,.98); backdrop-filter: blur(12px);
@@ -121,143 +103,15 @@
     color: var(--gold);
     border: 1px solid rgba(201,168,76,.3);
   }
-
-  /* ── Page Wrapper ── */
   .page { display: block !important; }
   .section { padding: 1.25rem 1rem 2rem; max-width: 680px; margin: 0 auto; }
-  .section-title {
-    font-family: 'Poppins', sans-serif; font-weight: 800;
-    font-size: 1.5rem; color: var(--white); margin-bottom: .3rem;
-  }
-  .gold-line {
-    height: 3px; width: 50px;
-    background: linear-gradient(90deg, var(--gold), transparent);
-    border-radius: 2px; margin-bottom: 1.25rem;
-  }
-
-  /* ── Cards ── */
-  .card {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 12px; padding: 1rem 1.1rem; margin-bottom: .9rem;
-  }
-
-  /* ── Archive specific ── */
-  .arc-month-banner {
-    background: linear-gradient(135deg, var(--blue), #1a3a8a);
-    border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem;
-    border: 1px solid var(--gold); text-align: center;
-  }
-  .arc-month-banner h2 {
-    font-size: 1.4rem; color: var(--gold); margin-bottom: .3rem;
-  }
-  .arc-month-banner p { color: var(--muted); font-size: .85rem; line-height: 1.6; }
-
-  .arc-week-label {
-    font-family: 'Poppins', sans-serif; font-weight: 700;
-    font-size: .7rem; color: var(--gold);
-    letter-spacing: 2px; text-transform: uppercase;
-    padding: .3rem 0 .5rem;
-    border-bottom: 1px solid var(--border);
-    margin: 1.25rem 0 .75rem;
-  }
-
-  .arc-card {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 12px; margin-bottom: .65rem; overflow: hidden;
-    transition: border-color .2s;
-  }
-  .arc-card:hover { border-color: rgba(201,168,76,.45); }
-
-  .arc-header {
-    padding: .85rem 1rem; cursor: pointer;
-    display: grid; grid-template-columns: 1fr auto;
-    align-items: center; gap: .5rem;
-  }
-  .arc-meta {
-    font-size: .72rem; color: var(--muted);
-    margin-bottom: .2rem; display: flex; gap: .6rem; flex-wrap: wrap;
-  }
-  .arc-ref { color: var(--gold); font-weight: 500; }
-  .arc-title {
-    font-family: 'Poppins', sans-serif; font-weight: 600;
-    font-size: .95rem; color: var(--white); line-height: 1.35;
-  }
-  .arc-chevron { color: var(--gold); font-size: .8rem; transition: transform .2s; }
-  .arc-chevron.open { transform: rotate(180deg); }
-
-  .arc-body { padding: 0 1rem 1rem; border-top: 1px solid var(--border); }
-
-  .arc-verse-box {
-    background: rgba(201,168,76,.08); border-radius: 8px;
-    padding: .85rem; margin: .85rem 0;
-    border-left: 3px solid var(--gold);
-  }
-  .arc-verse-text {
-    font-style: italic; font-size: .9rem; color: var(--white);
-    line-height: 1.75; margin-bottom: .35rem;
-  }
-  .arc-verse-ref {
-    font-family: 'Poppins', sans-serif; font-weight: 600;
-    font-size: .7rem; color: var(--gold); letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-
-  .arc-content {
-    font-size: .88rem; color: var(--text);
-    line-height: 1.8; margin-bottom: .85rem;
-  }
-
-  .arc-insight {
-    background: rgba(201,168,76,.08); border-radius: 8px;
-    padding: .85rem; margin-bottom: .85rem;
-    border: 1px solid rgba(201,168,76,.2);
-  }
-  .arc-insight-label {
-    font-family: 'Poppins', sans-serif; font-weight: 700;
-    font-size: .65rem; color: var(--gold);
-    letter-spacing: 2px; text-transform: uppercase; margin-bottom: .4rem;
-  }
-  .arc-insight-text {
-    font-style: italic; font-size: .88rem;
-    color: var(--white); line-height: 1.7;
-  }
-
-  .arc-plan {
-    display: grid; grid-template-columns: 1fr 1fr; gap: .75rem;
-    background: rgba(255,255,255,.04); border-radius: 8px;
-    padding: .75rem; margin-bottom: .85rem;
-    font-size: .83rem; color: var(--muted);
-  }
-  .arc-plan-label {
-    font-family: 'Poppins', sans-serif; font-weight: 600;
-    font-size: .65rem; color: var(--cyan);
-    letter-spacing: 1.5px; text-transform: uppercase;
-    display: block; margin-bottom: .3rem;
-  }
-
-  .arc-prayer {
-    background: rgba(0,229,255,.06); border-radius: 8px;
-    padding: .85rem; border-left: 3px solid var(--cyan);
-  }
-  .arc-prayer-label {
-    font-family: 'Poppins', sans-serif; font-weight: 700;
-    font-size: .65rem; color: var(--cyan);
-    letter-spacing: 2px; text-transform: uppercase;
-    display: block; margin-bottom: .5rem;
-  }
-  .arc-prayer p {
-    font-style: italic; font-size: .88rem;
-    color: var(--text); line-height: 1.75;
-  }
-
-  /* ── Devotion Page specific ── */
   .dev-date {
-    font-size: .75rem; color: var(--muted);
+    font-size: .75rem; color: var(--text-muted);
     margin-bottom: .5rem; font-weight: 300;
   }
   .dev-topic {
     font-family: 'Poppins', sans-serif; font-weight: 800;
-    font-size: 1.55rem; color: var(--white);
+    font-size: 1.55rem; color: var(--text-head);
     line-height: 1.2; margin-bottom: 1rem;
   }
   .dev-verse-wrap {
@@ -266,8 +120,9 @@
     border-left: 3px solid var(--gold);
   }
   .dev-verse {
-    font-style: italic; font-size: .95rem; color: var(--white);
+    font-style: italic; font-size: .95rem; color: var(--text-verse);
     line-height: 1.8; margin-bottom: .4rem;
+    text-align: justify;
   }
   .dev-ref {
     font-family: 'Poppins', sans-serif; font-weight: 700;
@@ -275,9 +130,12 @@
     letter-spacing: 1px; text-transform: uppercase;
   }
   .dev-body {
-    font-size: .93rem; color: var(--text);
+    font-size: .93rem; color: var(--text-body);
     line-height: 1.85; margin-bottom: 1.25rem;
+    text-align: justify;
   }
+  .dev-body p { margin-bottom: .85rem; }
+  .dev-body p:last-child { margin-bottom: 0; }
   .dev-insight {
     background: rgba(201,168,76,.09); border-radius: 10px;
     padding: 1rem; margin-bottom: 1rem;
@@ -290,13 +148,14 @@
   }
   .dev-insight-text {
     font-style: italic; font-size: .92rem;
-    color: var(--white); line-height: 1.7;
+    color: var(--text-verse); line-height: 1.7;
+    text-align: justify;
   }
   .dev-plan-wrap {
     display: grid; grid-template-columns: 1fr 1fr; gap: .75rem;
     background: rgba(255,255,255,.04); border-radius: 8px;
     padding: .85rem; margin-bottom: 1rem;
-    font-size: .85rem; color: var(--muted);
+    font-size: .85rem; color: var(--text-muted);
   }
   .dev-plan-label {
     font-family: 'Poppins', sans-serif; font-weight: 600;
@@ -317,7 +176,8 @@
   }
   .dev-prayer p {
     font-style: italic; font-size: .92rem;
-    color: var(--text); line-height: 1.75;
+    color: var(--text-verse); line-height: 1.75;
+    text-align: justify;
   }
   .dev-archive-link {
     text-align: center; padding-top: 1rem;
@@ -333,73 +193,8 @@
     transition: background .2s;
   }
   .dev-archive-link a:hover { background: rgba(201,168,76,.25); }
-  .dev-archive-link p { font-size: .75rem; color: var(--muted); margin-bottom: .6rem; }
-
-  /* ── Readability: softer text on dark background ── */
-  :root {
-    --text-body:  #c8d8ee;
-    --text-head:  #eef2ff;
-    --text-verse: #e8eeff;
-    --text-muted: #9aacc8;
-  }
-  body { color: var(--text-body) !important; }
-
-  /* Headings */
-  h1,h2,h3,h4,h5,
-  .section-title, .hero-title, .hero-tagline,
-  .dev-topic, .book-title, .event-title,
-  .leader-name, .vision-title, .model-name,
-  .arc-title { color: var(--text-head) !important; }
-
-  /* Body / paragraph text */
-  p, .dev-body, .arc-content,
-  .book-desc, .event-desc, .leader-role,
-  .connect-val, .give-desc, .community-text { color: var(--text-body) !important; }
-
-  /* Italic / verse / insight */
-  .dev-verse, .arc-verse-text, .dev-insight-text,
-  .arc-insight-text, .arc-prayer p, .dev-prayer p,
-  blockquote, i, em { color: var(--text-verse) !important; }
-
-  /* Muted / small text */
-  .dev-date, .arc-meta, .arc-date, .book-author,
-  .event-tag, .arc-plan, .muted,
-  .dev-plan-wrap { color: var(--text-muted) !important; }
-
-  /* Keep gold and cyan as-is */
-  .gold, .dev-ref, .arc-ref, .arc-verse-ref,
-  [style*="color:var(--gold)"],
-  [style*="color:#c9a84c"] { color: #c9a84c !important; }
-
-</style>
-  <style>
-  :root{--text-body:#c8d8ee;--text-head:#eef2ff;--text-verse:#e8eeff;--text-muted:#9aacc8}
-  body{padding-bottom:72px;color:#c8d8ee}
-  .page{display:block!important}
-  .bnav-btn.active{color:var(--gold)!important}
-  .dev-topic{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.45rem;color:#eef2ff;line-height:1.25;margin-bottom:.9rem}
-  .dev-date{font-family:'Roboto',sans-serif;font-weight:300;font-size:.78rem;color:#9aacc8;margin-bottom:.5rem}
-  .dev-verse-wrap{background:rgba(201,168,76,.09);border-radius:10px;padding:1rem 1.1rem;margin-bottom:1.1rem;border-left:3px solid #c9a84c}
-  .dev-verse{font-family:'Roboto',sans-serif!important;font-style:italic;font-size:.94rem;color:#e8eeff;line-height:1.82;margin-bottom:.4rem;text-align:justify}
-  .dev-ref{font-family:'Poppins',sans-serif;font-weight:700;font-size:.68rem;color:#c9a84c;letter-spacing:1px;text-transform:uppercase}
-  .dev-body{font-family:'Roboto',sans-serif;font-size:.93rem;color:#c8d8ee;line-height:1.88;margin-bottom:1.2rem;text-align:justify}
-  .dev-insight{background:rgba(201,168,76,.08);border-radius:10px;padding:1rem 1.1rem;margin-bottom:1rem;border:1px solid rgba(201,168,76,.22)}
-  .dev-insight-label{font-family:'Poppins',sans-serif;font-weight:700;font-size:.64rem;color:#c9a84c;letter-spacing:2px;text-transform:uppercase;margin-bottom:.5rem;display:block}
-  .dev-insight-text{font-family:'Roboto',sans-serif;font-style:italic;font-size:.91rem;color:#e8eeff;line-height:1.72;text-align:justify}
-  .dev-plan-wrap{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;background:rgba(255,255,255,.04);border-radius:8px;padding:.85rem;margin-bottom:1rem;font-family:'Roboto',sans-serif;font-size:.84rem;color:#9aacc8}
-  .dev-plan-label{font-family:'Poppins',sans-serif;font-weight:600;font-size:.63rem;color:#00e5ff;letter-spacing:1.5px;text-transform:uppercase;display:block;margin-bottom:.3rem}
-  .dev-prayer{background:rgba(0,229,255,.05);border-radius:10px;padding:1rem 1.1rem;border-left:3px solid #00e5ff;margin-bottom:1.2rem}
-  .dev-prayer-label{font-family:'Poppins',sans-serif;font-weight:700;font-size:.64rem;color:#00e5ff;letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:.5rem}
-  .dev-prayer p{font-family:'Roboto',sans-serif;font-style:italic;font-size:.91rem;color:#c8d8ee;line-height:1.78;margin:0;text-align:justify}
-  .dev-archive-link{text-align:center;padding-top:1rem;border-top:1px solid rgba(201,168,76,.18)}
-  .dev-archive-link p{font-size:.75rem;color:#9aacc8;margin-bottom:.6rem;font-family:'Roboto',sans-serif}
-  .dev-archive-link a{display:inline-block;background:rgba(201,168,76,.11);color:#c9a84c;font-family:'Poppins',sans-serif;font-weight:600;font-size:.84rem;padding:10px 24px;border-radius:24px;text-decoration:none;border:1px solid rgba(201,168,76,.32)}
-  .dev-video{background:rgba(255,255,255,.04);border-radius:10px;padding:1rem 1.1rem;margin-bottom:1.2rem;border:1px solid rgba(201,168,76,.22)}
-  .dev-video-label{font-family:'Poppins',sans-serif;font-weight:700;font-size:.64rem;color:#c9a84c;letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:.6rem}
-  .dev-video-frame{position:relative;width:100%;padding-top:56.25%;border-radius:8px;overflow:hidden;background:#000}
-  .dev-video-frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
-  .dev-video-link{display:inline-block;margin-top:.7rem;font-family:'Poppins',sans-serif;font-weight:600;font-size:.78rem;color:#c9a84c;text-decoration:none}
-</style>
+  .dev-archive-link p { font-size: .75rem; color: var(--text-muted); margin-bottom: .6rem; }
+  </style>
 </head>
 <body>
 <nav class="desktop-nav">
@@ -407,7 +202,6 @@
     <span class="brand">The Healing Moment Church</span>
     <div class="links">
       <a href="/">Home</a>
-      <a href="/live">🔴 Live</a>
       <a href="/sermons">Sermons</a>
       <a href="/devotion">Devotion</a>
       <a href="/archive">Archive</a>
@@ -420,39 +214,72 @@
 </nav>
 <div class="page">
 <div class="section">
-  <div class="dev-date">Monday, 9th November, 2026 · Apostle Julius P. Isabirye</div>
-  <div class="dev-topic">And The Word Was Made Flesh</div>
+
+  <div class="dev-date">Wednesday, 11th November, 2026 · Apostle Julius P. Isabirye</div>
+  <div class="dev-topic">The Sent Word of God</div>
+
   <div class="dev-verse-wrap">
-    <div class="dev-verse">In the beginning was the Word, and the Word was with God, and the Word was God. And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth.</div>
-    <div class="dev-ref">John 1:1,14 (KJV)</div>
+    <div class="dev-verse">"God spoke the words 'Be healed,' and we were healed, delivered from death's door!"</div>
+    <div class="dev-ref">Psalm 107:20 (TPT)</div>
   </div>
-  <div class="dev-body">It is a great blessing for us to have the Word of God. It is one of the greatest gifts God gave to us.<br><br>When Jesus came into this world, He bore the identity of the Word of God. He came as the Word of God made flesh. It was God's message to us about the honor He has given to His Word.<br><br>Mary was pregnant with the Word of God made flesh. It is what she gave birth to in the manger. When the wise men came to worship, they were worshipping the Living Word of God. God was revealing to us the glory and honor of His word.<br><br>When you understand the living nature of God's word personified as Jesus Christ, it birthes within you a holy reverence for God's Word. You will start treating it with respect and honor even in its written form. You will listen to sermons with reverence and attend to the words of God with an open heart. This is the right attitude and posture of heart that brings transformation.<br><br>Learn to honor the Word of God. See it as a living entity filled with the life and nature of God. Since it is able to put on flesh, learn to listen to it and obey its instructions. The word of God is a living personality. See it that way always. Glory to Jesus!</div>
+
+  <div class="dev-body">
+    <p>When God speaks, everything hears and submits to the authority of His word. His voice is mighty because every word He speaks is full of power and majesty.</p>
+    <p>The sent word of God always does what it is sent to do (Isaiah 55:10–11). It cannot fail.</p>
+    <p>Psalm 107:20 tells us that when God said, "Be healed … we were healed and delivered from death's door." The sickness was deadly, but it was overpowered by the power of the sent word of God, and they were healed.</p>
+    <p>The sent word of God also defeated death and stopped it from taking their life. Therefore, the sent word of God is more powerful than sickness and death. It is greater than any challenge you may be going through.</p>
+    <p>When God said, "Let there be light," light came and darkness was overpowered (Genesis 1:3). So, when you receive the sent word of God in faith, it gives you victory over any challenge around you.</p>
+    <p>The New Living Translation says, "He sent out his word and healed them, snatching them from the door of death." The sent word of God is able to heal you and deliver you from any challenge, including death.</p>
+    <p>From today, choose to always receive the word God speaks to you in faith, and it will work great wonders in your life, in Jesus Name!</p>
+  </div>
+
   <div class="dev-insight">
-    <div class="dev-insight-label">&#10024; Healing Insight</div>
-    <div class="dev-insight-text">When you understand the living nature of God's word personified as Jesus Christ, it birthes within you a holy reverence for God's Word. You will start treating it with respect and honor even in its written form.</div>
+    <div class="dev-insight-label">✦ Healing Insight</div>
+    <div class="dev-insight-text">The sent word of God always does what it is sent to do. It cannot fail.</div>
   </div>
+
   <div class="dev-plan-wrap">
-    <div><span class="dev-plan-label">Reading Plan</span>Jeremiah 46&ndash;47 &middot; Hebrews 6</div>
-    <div><span class="dev-plan-label">Meditation</span>John 1:1,14</div>
-  </div>
-  <div class="dev-prayer">
-    <span class="dev-prayer-label">Prayer</span>
-    <p>May God reveal His Word to you in a new way so that you begin relating to it as a living personality full of the life and nature of God. May your hunger and reverence for the Word of God never grow cold, in Jesus Mighty Name!</p>
-  </div>
-  <div class="dev-video">
-    <span class="dev-video-label">&#9654; Watch</span>
-    <div class="dev-video-frame">
-      <iframe src="https://www.youtube.com/embed/Mpw0lDs9iCc" title="And The Word Was Made Flesh" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div>
+      <span class="dev-plan-label">📖 Bible Reading</span>
+      Jeremiah 50 · Hebrews 8
     </div>
-    <a class="dev-video-link" href="https://youtu.be/Mpw0lDs9iCc" target="_blank" rel="noopener">Open on YouTube &rarr;</a>
+    <div>
+      <span class="dev-plan-label">🙏 Meditation</span>
+      Isaiah 55:10–11
+    </div>
   </div>
+
+  <div class="dev-prayer">
+    <span class="dev-prayer-label">✦ Prayer</span>
+    <p>Heavenly Father, I thank You for every word you have spoken to me in voice and in writing. I receive them with an open heart. I believe and declare that every word You have spoken to me will be fulfilled without fail, in Jesus Mighty Name! Amen.</p>
+  </div>
+
   <div class="dev-archive-link">
     <p>Missed a previous devotion?</p>
-    <a href="/archive">View Past Devotions</a>
+    <a href="/archive">📖 View Devotion Archive</a>
+  </div>
+
+</div>
+</div>
+<nav class="bottom-nav">
+  <a href="/" class="bnav-btn"><span class="bnav-icon">🏠</span><span class="bnav-label">Home</span></a>
+  <a href="/sermons" class="bnav-btn"><span class="bnav-icon">🎧</span><span class="bnav-label">Sermons</span></a>
+  <a href="/devotion" class="bnav-btn"><span class="bnav-icon">📖</span><span class="bnav-label">Devotion</span></a>
+  <a href="/events" class="bnav-btn"><span class="bnav-icon">📅</span><span class="bnav-label">Events</span></a>
+  <a href="/testimonies" class="bnav-btn"><span class="bnav-icon">✨</span><span class="bnav-label">Stories</span></a>
+  <a href="/give" class="bnav-btn"><span class="bnav-icon">💛</span><span class="bnav-label">Give</span></a>
+  <a href="/connect" class="bnav-btn"><span class="bnav-icon">💬</span><span class="bnav-label">Connect</span></a>
+  <button class="bnav-btn" onclick="toggleMore()" id="bnav-more"><span class="bnav-icon">☰</span><span class="bnav-label">More</span></button>
+</nav>
+<div class="more-menu" id="more-menu">
+  <div class="grid">
+    <a href="/vision">👁 Our Vision</a>
+    <a href="/books">📚 Books</a>
+    <a href="/community">🤝 Community</a>
+    <a href="/salvation">🙏 Salvation</a>
+    <a href="/archive" class="archive-link">📖 Devotion Archive</a>
   </div>
 </div>
-</div>
-
 <script>
 function toggleMore(){
   var m=document.getElementById('more-menu');
